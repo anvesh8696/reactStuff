@@ -1,0 +1,21 @@
+{
+  "name": "solution",
+  "authors": [
+    "Clay Boyd <clboyd@paypal.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "babel": "^5.8.38",
+    "react": "^15.3.1"
+  }
+}

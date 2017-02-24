@@ -1,0 +1,178 @@
+react installation
+
+Install Node on your system
+
+npm > 3.8.8
+node > 4.5.10
+
+command:  node install create-react-app -g
+
+go to command and redirect to desktop path
+
+desktop> create-recat-app mythriApp
+
+cd mythriApp
+
+cmd:  npm install // installs all packages like react-scripts
+
+check node_modules folder is created after the command
+
+cmd: npm start // to start the server
+
+
+go chrome browser -> localhost.com:3000
+
+to see the first react app
+
+if your not going with create-react-app installation you need to manually install all babel plugins,webpack plugin to build the pacakges
+
+manual process without create-react-app npm package
+
+cmd:mkdir reactApp
+cmd:npm init
+
+add babel & webpack 
+cmd:npm install webpack --save
+cmd:npm install react --save
+cmd:npm install react-dom --save
+cmd:npm install babel-core
+cmd:npm install babel-loader
+cmd:npm install babel-preset-react
+create files-
+
+C:\Users\username\Desktop\reactApp>touch index.html
+C:\Users\username\Desktop\reactApp>touch App.jsx
+C:\Users\username\Desktop\reactApp>touch main.js
+C:\Users\username\Desktop\reactApp>touch webpack.config.js
+
+webpack.config.js
+var config = {
+   entry: './main.js',
+	
+   output: {
+      path:'./',
+      filename: 'index.js',
+   },
+	
+   devServer: {
+      inline: true,
+      port: 8080
+   },
+	
+   module: {
+      loaders: [
+         {
+            test: /\.jsx?$/,
+            exclude: /node_modules/,
+            loader: 'babel',
+				
+            query: {
+               presets: ['es2015', 'react']
+            }
+         }
+      ]
+   }
+}
+
+module.exports = config;
+
+
+add this line to start the webpack dev server
+
+"start": "webpack-dev-server --hot"
+
+
+index.html
+
+<!DOCTYPE html>
+<html lang = "en">
+
+   <head>
+      <meta charset = "UTF-8">
+      <title>React App</title>
+   </head>
+
+   <body>
+      <div id = "app"></div>
+      <script src = "index.js"></script>
+   </body>
+
+</html>
+
+app.js
+import React from 'react';
+
+class App extends React.Component {
+   render() {
+      return (
+         <div>
+            Hello World!!!
+         </div>
+      );
+   }
+}
+
+export default App;
+
+main.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App.jsx';
+
+ReactDOM.render(<App />, document.getElementById('app'));
+
+
+
+why webpack
+
+It lets you write modular code and bundle it together into small packages to optimize load time.
+
+command - npm run build
+
+imp--
+
+1.webpack can do many optimizations to reduce the output size. It also cares about request caching by using hashes.
+
+2.webpack allows you to split your codebase into chunks. Chunks are loaded on demand. This reduces initial loading time.
+
+why jsx
+
+In general, HTML and JavaScript are segregated in frameworks by defining UI or a view to represent their mutable data, which normally is a template language and/or a display logic interpreter. 
+example--
+
+
+<html>
+  <head>
+    <title>Just an example</title>
+  </head>
+  <body>
+    <div id="my-awesome-app">
+      <!-- Here go my rendered template -->
+    </div>
+    
+    <script id="my-list" type="text/html">
+      <ul>
+        {{each items}}
+          <li>
+            ${name}
+          </li>
+        {{/each}}
+      </ul>
+    </script>
+  </body>
+</html>
+
+
+JSX is a preprocessor step that adds XML syntax to JavaScript.
+
+1.Just like XML, JSX tags have a tag name, attributes, and children. 
+2.If an attribute value is enclosed in quotes, the value is a string. Otherwise, wrap the value in braces and the value is the enclosed JavaScript expression.
+
+<div className="red">Children Text</div>;
+<MyCounter count={3 + 5} />;
+
+3.JSX is faster because it performs optimization while compiling code to JavaScript.
+4.It is also type-safe and most of the errors can be caught during compilation.
+5.JSX makes it easier and faster to write templates if you are familiar with HTML.
+
+

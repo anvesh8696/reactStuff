@@ -1,0 +1,21 @@
+{
+  "name": "flexbox",
+  "description": "This is a flexbox environment",
+  "main": "index.js",
+  "author": "clay boyd",
+  "moduleType": [
+    "amd"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "^2.1.16"
+  }
+}

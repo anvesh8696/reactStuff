@@ -1,0 +1,95 @@
+fetch - ajax request -(it is used as a promise to retrive the async data)
+
+fetch ajax call
+
+
+import React, { Component } from 'react';
+
+class App extends Component {
+constructor(){
+	super();
+	this.state = {
+		items :[]
+	}
+}
+filter(e){
+	this.setState({filter:e.target.value})
+}
+componentWillMount(){
+	fetch('https://swapi.co/api/people/?format=json').then(response =>response.json())
+		.then(({results:items})=>this.setState({items}))
+}
+render(){
+	let items = this.state.items
+	if(this.state.filter){
+		items = items.filter(item=>item.name.toLowerCase().includes(this.state.filter.toLowerCase()))
+	}
+	return (
+		<div>
+			<input type="text" onChange={this.filter.bind(this)}/>
+			{items.map(item=><Person update={item}/>)}
+		</div>
+	)
+}
+}
+
+const Person = (prop) =><h4>{prop.update.name}</h4>
+
+export default App;
+
+
+// hign ordered components
+
+parent (hoc)container 
+
+normal- child 1 (addtionally adding the fucntionality into the existing comp)
+normal - child 2
+
+
+parent(normal comp)
+
+import React, {Component} from 'react'
+
+const HOC = (Innercomp) => class extends Component {
+	constructor(){
+		super();
+		this.state = {
+			count:0
+		}
+	}
+	update(){
+		this.setState({count:this.state.count+1})
+	}
+	render(){
+		return <Innercomp {...this.props} {...this.state} update={this.update.bind(this)}/>
+	}
+}
+
+class App extends Component {
+	render(){
+		return (
+			<div>
+				<Button>react</Button>
+				<LabelHOC>sample</LabelHOC>
+			</div>
+		)
+	}
+}
+
+const Button = HOC((props) => <button onClick={props.update}>{props.children} -{props.count}</button>)
+
+class Label extends Component {
+	render(){
+		return (
+			<div>
+				<label onMouseMove={this.props.update}>{this.props.children}-{this.props.count}</label>
+			</div>
+		)
+	}
+}
+
+const LabelHOC = HOC(Label)
+export default App
+
+
+

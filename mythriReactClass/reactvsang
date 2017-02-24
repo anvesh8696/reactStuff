@@ -1,0 +1,63 @@
+ang2
+component based
+directives
+ionic(mobile)/cordova
+typescript
+(click)=handler()
+routing
+RouterModule, Routes
+handlebars(templating)
+no scopes & no watchers
+improved depedency injection
+custom directives
+two way data binding
+services,factories,values,constants
+no digest cycle
+mvc
+
+react
+
+virtual dom (abstarction of dom)
+light weight
+traverse directly on the node 
+render()
+uni directional
+
+view  -> component -> model
+model -> comp -> view
+node  - uni directioan
+react native / mobile
+no routing/ sync for back end server (depend on third lib) - jquery ajax / node http routers 
+jsx
+- normally look liking an html
+
+<h1 className="sample">hello</h1>
+id is not supported as selector / attribute
+
+jsx in react -> babel(converting jsx to html represented js)
+
+// Using JSX to express UI components.
+var dropdown =
+  <Dropdown>
+    A dropdown list
+    <Menu>
+      <MenuItem className={style:"border:1+1px"}>Do Something</MenuItem>
+      <MenuItem>Do Something Fun!</MenuItem>
+      <MenuItem>Do Something Else</MenuItem>
+    </Menu>
+  </Dropdown>;
+
+render(dropdown);
+react doesn't supports inline templating
+
+
+
+
+<html> --> node1(part of the memory(or location residing in the memory))
+<body>  --> node2
+<h1>   --> node 3 
+<li>
+<p>
+</body>
+
+

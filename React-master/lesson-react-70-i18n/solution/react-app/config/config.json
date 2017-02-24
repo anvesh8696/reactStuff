@@ -1,0 +1,84 @@
+{
+
+
+    "express": {
+        "view engine": "jsx",
+        "view": "require:anemone-machina/lib/expressView",
+        "view cache": false,
+        "views": "path:./public/views"
+    },
+    "view engines": {
+        "jsx": {
+            "module": "anemone-machina/lib/server",
+            "renderer": {
+                "method": "create",
+                "arguments": [
+                    {
+                        "routes": "require:./routes.jsx",
+                        "routesFilePath": "path:./routes.jsx"
+                    }
+                ]
+            }
+        }
+    },
+
+
+
+
+    "i18n": {
+        "contentPath": "path:./locales",
+        "fallback": "en-US"
+    },
+
+
+    "specialization": {
+    },
+
+    "middleware": {
+
+        "language": {
+            "priority": 95,
+            "enabled": true,
+            "module": {
+                "name": "path:./lib/language"
+            }
+        },
+
+        "reactContentLoader": {
+            "priority": 100,
+            "enabled": true,
+            "module": {
+                "name": "anemone-lingua",
+                "arguments": [
+                    {
+                        "contentPath": "path:./locales",
+                        "fallback": "en-US"
+                    }
+                ]
+            }
+        },
+
+        "methodOverride": {
+            "priority": 90,
+            "enabled": true,
+            "module": {
+                "name": "method-override",
+                "arguments": [ "_method" ]
+            }
+        },
+
+
+        "static": {
+            "module": {
+                "arguments": [ "path:./.build" ]
+            }
+        },
+
+        "router": {
+            "module": {
+                "arguments": [{ "directory": "path:./controllers" }]
+            }
+        }
+
+    }
+}

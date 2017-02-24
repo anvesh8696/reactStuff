@@ -1,0 +1,231 @@
+//component life cycle methods
+
+import React from 'react';
+import ReactDOM from 'react-dom'
+
+class App extends React.Component {
+	constructor(){
+		super()
+		this.state ={
+			val:0
+		}
+	}
+	update(){
+		this.setState({val:this.state.val+1})
+	}
+	componentWillMount(){
+		console.log("componentWillmount will trigger before render method or before comp is mounted on dom")
+	}
+	componentDidMount(){
+		console.log('componentDidMount will trigger when the comp is mounted on the dom')
+	}
+	componentWillUnmount(){
+		console.log("componentWillUnmount will trigger when the comp is removed from the dom")
+	}
+	render(){
+		console.log("render")
+		return (
+			<div>
+				<button onClick={this.update.bind(this)}>{this.state.val}</button>
+			</div>
+		)
+	}
+}
+
+
+class Wrapper extends React.Component {
+	mount(){
+		ReactDOM.render(<App/>,document.getElementById('qwerty'))
+	}
+	unmount(){
+		ReactDOM.unmountComponentAtNode(document.getElementById('qwerty'))
+	}
+	render(){
+		return (
+			<div>
+				<button onClick={this.mount.bind(this)}>mount</button>
+				<button onClick={this.unmount.bind(this)}>unmount</button>
+				<div id="qwerty"></div>
+			</div>
+		)
+
+	}
+}
+
+
+
+export default Wrapper
+
+
+
+1//compwillmount
+2//render
+3//compdidmount
+!(yesorno)4//comp will unmount
+
+
+//component life cycle methods
+
+- findDOMNode
+  // its will find the available element on the node which is injected on the dom
+
+playing with compwillmount vs compoUnmount
+
+import React from 'react';
+import ReactDOM from 'react-dom'
+
+class App extends React.Component {
+	constructor(){
+		super()
+		this.state ={
+			val:0
+		}
+	}
+	update(){
+		this.setState({val:this.state.val+1})
+	}
+	componentWillMount(){
+		console.log("componentWillmount will trigger before render method or before comp is mounted on dom")
+		this.setState({m:10})
+	}
+	componentDidMount(){
+		console.log('componentDidMount will trigger when the comp is mounted on the dom')
+		console.log('get html element'+ReactDOM.findDOMNode(this))
+		this.inc = setInterval(this.update.bind(this),500)
+	}
+	componentWillUnmount(){
+		console.log("componentWillUnmount will trigger when the comp is removed from the dom")
+		clearInterval(this.inc)
+	}
+	render(){
+		console.log("render")
+		return (
+
+				<button onClick={this.update.bind(this)}>{this.state.val*this.state.m}</button>
+		)
+	}
+}
+
+
+class Wrapper extends React.Component {
+	mount(){
+		ReactDOM.render(<App/>,document.getElementById('qwerty'))
+	}
+	unmount(){
+		ReactDOM.unmountComponentAtNode(document.getElementById('qwerty'))
+	}
+	render(){
+		return (
+			<div>
+				<button onClick={this.mount.bind(this)}>mount</button>
+				<button onClick={this.unmount.bind(this)}>unmount</button>
+				<div id="qwerty"></div>
+			</div>
+		)
+
+	}
+}
+
+
+
+export default Wrapper
+
+
+// no prioruty
+- componentWillReceiveProps
+
+ // expecting some props from other comps to be injected in your comp
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+class App extends React.Component{
+	constructor(){
+		super();
+		this.state = {
+			increasing:false
+		}
+	}
+	update(){
+		ReactDOM.render(<App val={this.props.val+1}/>,document.getElementById('root'))
+	}
+	componentWillReceiveProps(nextProps){
+		this.setState({increasing:nextProps.val>this.props.val})
+	}
+	shouldComponentUpdate(nextProps, nextState)
+	{
+		return nextProps.val%5 === 0
+	}
+	render(){
+		console.log(this.state.increasing)
+		return <button onClick={this.update.bind(this)}>{this.props.val}</button>
+	}
+	componentDidUpdate(prevProps, prevState){
+		console.log(`previousProps:${prevProps.val}`)
+
+	}
+
+}
+
+App.defaultProps = {
+	val:0
+}
+
+export default App
+
+
+
+//high order components
+
+to share multiple functionality between multiple components
+take a comp and return a new comp
+
+import React, { Component } from 'react';
+
+const HOC = (Innercomp) => class  extends Component{
+	constructor(){
+		super();
+		this.state = {
+			count:0
+		}
+	}
+	update(){
+		this.setState({count:this.state.count+1})
+	}
+	componentWillMount(){
+		console.log('high order component')
+	}
+	render(){
+		return <Innercomp {...this.props} {...this.state} update={this.update.bind(this)} />
+	}
+}
+
+class App extends Component {
+	render() {
+		return (
+			<div>
+			<Button>react</Button>
+			<LabelHoc>sample</LabelHoc>
+				</div>
+		)
+	}
+}
+
+const Button = HOC((props) => <button onClick={props.update}>{props.children}-{props.count}</button>)
+
+class Label extends Component {
+	componentWillMount(){
+		console.log('label comp')
+	}
+	render(){
+		return (
+			<div>
+				<label onMouseMove={this.props.update}>{this.props.children}-{this.props.count}</label>
+			</div>
+		)
+	}
+}
+const LabelHoc = HOC(Label)
+export default App;
+
+

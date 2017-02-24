@@ -1,0 +1,44 @@
+Destructuring is a convenient way of extracting multiple values from data stored in (possibly nested) objects and Arrays
+
+
+-- arrow functions
+-- angular vs react
+-- virtual dom vs dom
+-- jsx
+-- React set up
+-- sample App
+
+
+es6
+
+// let,const,var  done
+//Destructuring   done
+//arrow functions
+//promises  progress
+//exports & imports
+// ...(spread operator) done
+//map functions
+
+
+console.log(4)
+setTimeout(function(){console.log(0)}, 6000)
+
+
+setInterval(function(){console.log(i)},7000)
+
+
+setTimeout(function(){console.log(2)}, 0)
+setTimeout(function(){console.log(1)}, 400)
+setTimeout(function(){console.log(3)}, 300)
+console.log(5)
+
+more on promises by shivani -  https://scotch.io/tutorials/javascript-promises-for-dummies#understanding-promises
+
+
+node > 4  (!7)
+
+npm > 3.8.8
+
+
+
+

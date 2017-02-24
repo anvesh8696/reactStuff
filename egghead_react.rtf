@@ -1,0 +1,2756 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Bold;\f2\fnil\fcharset0 Menlo-Regular;
+\f3\fnil\fcharset0 Menlo-Italic;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue109;\red15\green112\blue3;\red235\green235\blue235;
+\red82\green0\blue103;\red221\green220\blue255;\red103\green104\blue52;\red109\green109\blue109;\red0\green0\blue254;
+\red55\green113\blue112;}
+\margl1440\margr1440\vieww26620\viewh14580\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 var person = [\
+\{\
+  fn:"anvesh",\
+  ln:"katipelly"\
+\},\
+ \{\
+  fn:"w",\
+  ln:"sdfs"\
+\},\
+ \{\
+  fn:"wer",\
+  ln:"wer"\
+\}]\
+person.forEach((\{fn\})=>console.log(fn))\
+\
+var [,fn] = person\
+\
+function samp(\{fn\})\{\
+  console.log(fn)\
+\}\
+samp(fn)\
+\
+\
+\
+promise\
+\
+var a = new Promise((resolve,reject)=>\{\
+if(false)\{\
+  resolve("hello")\
+\}\
+else \{\
+  reject("error")\
+\}\
+\})\
+a.then((data)=>console.log("hi"+data))\
+a.catch((error)=>console.error("error"))\
+\
+\
+//settimeout\
+var a = new Promise((resolve,reject)=>\{\
+  setTimeout(()=>\{\
+  if(true)\{\
+  resolve("hello")\
+\}\
+else \{\
+  reject("error")\
+\}\
+\},2000)\
+\
+\})\
+a.then((data)=>console.log("hi"+data)).then((data)=>console.log("hi"+data))\
+a.catch((error)=>console.error("error"))\
+\
+\
+map methods\
+\
+var a = new Map()\
+\
+a.set("fn","anvesh")\
+a.set("ln","anvesh")\
+\
+\
+\
+for(var key of a.keys())\
+\{\
+  console.log(key)\
+\}\
+\
+react classes\'97\
+\
+class-1\
+\
+app.js\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \cf2 const 
+\f3\i\b0 \cf0 App 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 hi anvesh\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 export default 
+\f3\i\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\i0 \cf0 \
+index.js\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 ReactDom 
+\f1\b \cf2 from \cf3 'react-dom'\uc0\u8232 \cf2 import 
+\f3\i\b0 \cf0 App 
+\f1\i0\b \cf2 from \cf3 './App'\uc0\u8232 \u8232 
+\f2\b0 \cf0 ReactDom.
+\f1\b \cf5 render
+\f2\b0 \cf0 (\cb4 <
+\f1\b \cf2 App 
+\f2\b0 \cf0 />\cb1 ,\cb6 document\cb1 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'root'
+\f2\b0 \cf0 ))\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+class-2\
+stateless/statefull\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 
+\f3\i\b0 \cf8 //stateless component\uc0\u8232 //const App = () => <h1>hi anvesh</h1>\u8232 \u8232 //stateful component\u8232 
+\f1\i0\b \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 hi stateful\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \}\u8232 \}\u8232 \u8232 \u8232 
+\f3\i \cf8 // // stateful component\uc0\u8232 // class App extends React.Component \{\u8232 //     render()\{\u8232 //         return React.createElement('h1',null,'hi react creat element')\u8232 //     \}\u8232 // \}\u8232 \u8232 
+\f1\i0\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+class - 3\
+\
+adjacent jsx must be wrapped with enclosing tags\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232             \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 hi anvesh\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h2
+\f2\b0 \cf0 >\cb1 hi react\cb4 </
+\f1\b \cf2 h2
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232         )\u8232     \}\u8232 \}\u8232 \u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+class-4\
+\
+react-introduction-to-properties\
+\
+index.js\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 ReactDom 
+\f1\b \cf2 from \cf3 'react-dom'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 App 
+\f1\b \cf2 from \cf3 './App'\uc0\u8232 \u8232 
+\f2\b0 \cf0 ReactDom.
+\f1\b \cf5 render
+\f2\b0 \cf0 (\cb4 <
+\f1\b \cf2 App \cf9 cat\cf3 =
+\f2\b0 \cf0 \cb1 \{\cf9 5\cf0 +\cf9 7\cf0 \}\cb4  
+\f1\b \cf9 \cb6 txt\cf3 \cb4 ="this is the props value"
+\f2\b0 \cf0 />\cb1 ,
+\f1\b \cf5 document
+\f2\b0 \cf0 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'root'
+\f2\b0 \cf0 ))\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+app.js\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 \cb6 App\cb1  
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.
+\f1\b \cf5 Component 
+\f2\b0 \cf0 \{\uc0\u8232     \cf7 render\cf0 ()\{\uc0\u8232        
+\f1\b \cf2 let 
+\f2\b0 \cf10 txt \cf0 = 
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 txt\uc0\u8232         \cf2 let 
+\f2\b0 \cf10 cat \cf0 = 
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 cat\uc0\u8232         \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232             \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{\cf10 txt\cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{\cf10 cat\cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232         )\u8232     \}\u8232 \}\u8232 \u8232 \cb6 App\cb1 .
+\f1\b \cf5 propTypes 
+\f2\b0 \cf0 = \{\uc0\u8232     
+\f1\b \cf5 txt
+\f2\b0 \cf0 :React.
+\f1\b \cf5 PropTypes
+\f2\b0 \cf0 .
+\f1\b \cf5 string
+\f2\b0 \cf0 ,\uc0\u8232     
+\f1\b \cf5 cat
+\f2\b0 \cf0 :React.
+\f1\b \cf5 PropTypes
+\f2\b0 \cf0 .
+\f1\b \cf5 number
+\f2\b0 \cf0 .
+\f1\b \cf5 isRequired\uc0\u8232 
+\f2\b0 \cf0 \}\uc0\u8232 \u8232 \cb6 App\cb1 .
+\f1\b \cf5 defaultProps 
+\f2\b0 \cf0 = \{\uc0\u8232     
+\f1\b \cf5 txt
+\f2\b0 \cf0 :
+\f1\b \cf3 'this is the deafult props'
+\f2\b0 \cf0 ,\uc0\u8232     
+\f1\b \cf5 cat
+\f2\b0 \cf0 :\cf9 15\uc0\u8232 \cf0 \}\uc0\u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 \cb6 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb1 \
+\
+class-5\
+react-state-basics\
+\
+state is a collection of values that are managed & updated by the comp\
+\
+\
+app.js\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.
+\f1\b \cf5 Component 
+\f2\b0 \cf0 \{\uc0\u8232     \cf7 constructor\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 super
+\f2\b0 \cf0 ();\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 = \{\uc0\u8232             
+\f1\b \cf5 txt
+\f2\b0 \cf0 :
+\f1\b \cf3 "this is the state value"
+\f2\b0 \cf0 ,\uc0\u8232             
+\f1\b \cf5 cat
+\f2\b0 \cf0 :
+\f1\b \cf3 "this is static value"\uc0\u8232         
+\f2\b0 \cf0 \}\uc0\u8232     \}\u8232     \cf7 update\cf0 (e)\{\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{
+\f1\b \cf5 txt
+\f2\b0 \cf0 :e.
+\f1\b \cf5 target
+\f2\b0 \cf0 .
+\f1\b \cf5 value
+\f2\b0 \cf0 \})\uc0\u8232     \}\u8232 \u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 let 
+\f2\b0 \cf10 txt \cf0 = 
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 txt\uc0\u8232         \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232             \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 input \cf9 type\cf3 ="text" \cf9 onChange\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 />\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 txt
+\f2\b0 \cf0 \} - \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 cat
+\f2\b0 \cf0 \} - \{\cf10 txt\cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{\cf10 txt\cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232         )\u8232     \}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+index.js\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 ReactDom 
+\f1\b \cf2 from \cf3 'react-dom'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 App 
+\f1\b \cf2 from \cf3 './App'\uc0\u8232 \u8232 
+\f2\b0 \cf0 ReactDom.\cf7 render\cf0 (\cb4 <
+\f1\b \cf2 App \cf9 cat\cf3 =
+\f2\b0 \cf0 \cb1 \{\cf9 5\cf0 +\cf9 7\cf0 \}\cb4  
+\f1\b \cf9 txt\cf3 ="this is the props value"
+\f2\b0 \cf0 />\cb1 ,
+\f1\b \cf5 document
+\f2\b0 \cf0 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'root'
+\f2\b0 \cf0 ))\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+class- 6 \
+react-owner-ownee-relationship\
+\
+react component can render the o/p of other comp means the child component will up date the state of parent comp\
+app.js\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 constructor\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 super
+\f2\b0 \cf0 ();\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 = \{\uc0\u8232             
+\f1\b \cf5 txt
+\f2\b0 \cf0 :
+\f1\b \cf3 "this is the state value"
+\f2\b0 \cf0 ,\uc0\u8232             
+\f1\b \cf5 cat
+\f2\b0 \cf0 :
+\f1\b \cf3 "this is static value"\uc0\u8232         
+\f2\b0 \cf0 \}\uc0\u8232     \}\u8232     \cf7 update\cf0 (e)\{\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{
+\f1\b \cf5 txt
+\f2\b0 \cf0 :e.
+\f1\b \cf5 target
+\f2\b0 \cf0 .
+\f1\b \cf5 value
+\f2\b0 \cf0 \})\uc0\u8232     \}`\u8232 \u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 let 
+\f2\b0 \cf10 txt \cf0 = 
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 txt\uc0\u8232         \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232             \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 Widget \cf9 update\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 />\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 Widget \cf9 update\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 />\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 txt
+\f2\b0 \cf0 \} - \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 cat
+\f2\b0 \cf0 \} - \{\cf10 txt\cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{\cf10 txt\cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232         )\u8232     \}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Widget 
+\f2\i0 = (sam) => \cb4 <
+\f1\b \cf2 input \cf9 type\cf3 ="text" \cf9 onChange\cf3 =
+\f2\b0 \cf0 \cb1 \{sam.\cf7 update\cf0 \}\cb4 />\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+index.js\
+\
+same as above\
+\
+class-7\
+react-accessing-child-properties\
+in order to access the nested values/comp from comp to comp or new use props.children\
+app.js\
+\
+//nested value\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react\'94\'92\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 \cb4 <
+\f1\b \cf2 Button
+\f2\b0 \cf0 >\cb1 React\cb4 </
+\f1\b \cf2 Button
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Button 
+\f2\i0 = (props) => \cb4 <
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \{props.
+\f1\b \cf5 children
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 /nested comp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 \cb6 App\cb1  
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 \cb4 <
+\f1\b \cf2 Button
+\f2\b0 \cf0 ><
+\f1\b \cf2 Heart 
+\f2\b0 \cf0 />\cb1 React\cb4 </
+\f1\b \cf2 Button
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Button 
+\f2\i0 = (props) => \cb4 <
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \{props.
+\f1\b \cf5 children
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Heart 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 span
+\f2\b0 \cf0 >
+\f1\b \cf9 &hearts;
+\f2\b0 \cf0 </
+\f1\b \cf2 span
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 \cb6 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \cb1 \
+\
+class-8\
+react-custom-proptype-validation or add react-custom-proptype-validation to react comps\
+app.js\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 \cb4 <
+\f1\b \cf2 Sample \cf9 text\cf3 ="hireerrr"
+\f2\b0 \cf0 />\cb1 \uc0\u8232     \}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Sample
+\f2\i0 =(props)=>\cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{props.\cf7 text\cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f3\i Sample
+\f2\i0 .
+\f1\b \cf5 propTypes 
+\f2\b0 \cf0 = \{\uc0\u8232     \cf7 text\cf0 (props, propName, component)\uc0\u8232     \{\u8232         
+\f1\b \cf2 if
+\f2\b0 \cf0 (!(propName 
+\f1\b \cf2 in 
+\f2\b0 \cf0 props))\{\uc0\u8232             
+\f1\b \cf2 return new 
+\f2\b0 \cf0 Error(
+\f1\b \cf3 `MISSING $\{propName\}`
+\f2\b0 \cf0 )\uc0\u8232         \}\u8232 \u8232         
+\f1\b \cf2 if
+\f2\b0 \cf0 ((props[propName].
+\f1\b \cf5 length
+\f2\b0 \cf0 )<\cf9 6\cf0 )\{\uc0\u8232             
+\f1\b \cf2 return new 
+\f2\b0 \cf0 Error(
+\f1\b \cf3 `$\{propname\} is too short`
+\f2\b0 \cf0 )\uc0\u8232         \}\u8232     \}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+class-9\
+react-react-synthetic-event-system\
+normalize the events with react-react-synthetic-event-system\
+app.js\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 constructor\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 super
+\f2\b0 \cf0 ()\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 =\{\uc0\u8232             
+\f1\b \cf5 txt
+\f2\b0 \cf0 :
+\f1\b \cf3 "sample---"\uc0\u8232         
+\f2\b0 \cf0 \}\uc0\u8232     \}\u8232     \cf7 update\cf0 (e)\{\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{
+\f1\b \cf5 txt
+\f2\b0 \cf0 :e.
+\f1\b \cf5 type
+\f2\b0 \cf0 \})\uc0\u8232     \}\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232             \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 textarea \cf9 rows\cf3 ="12" \cf9 cols\cf3 ="12"\uc0\u8232                           \cf9 onPaste\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                           
+\f1\b \cf9 onCopy\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                           
+\f1\b \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                           
+\f1\b \cf9 onTouchMove\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                           
+\f1\b \cf9 onCut\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                           
+\f1\b \cf9 onFocus\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                           
+\f1\b \cf9 onBlur\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                           
+\f1\b \cf9 onMouseDown\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                           
+\f1\b \cf9 onDoubleClick\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                           
+\f1\b \cf9 onTouchStart\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 \uc0\u8232                 >\cb1 \uc0\u8232                 \cb4 </
+\f1\b \cf2 textarea
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 txt
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232         )\u8232     \}\u8232 \}\u8232 \u8232 \u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+class-10\
+refs are meant to access the node or instances of the component\
+\
+app.js\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 constructor\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 super
+\f2\b0 \cf0 ()\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 =\{\uc0\u8232             
+\f1\b \cf5 txt
+\f2\b0 \cf0 :
+\f1\b \cf3 "sample---"\uc0\u8232         
+\f2\b0 \cf0 \}\uc0\u8232     \}\u8232     \cf7 update\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\uc0\u8232             \{
+\f1\b \cf5 txt
+\f2\b0 \cf0 :
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 refs
+\f2\b0 \cf0 .sample.
+\f1\b \cf5 value
+\f2\b0 \cf0 ,\uc0\u8232                 
+\f1\b \cf5 txt1
+\f2\b0 \cf0 :
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 refs
+\f2\b0 \cf0 .sample1.
+\f1\b \cf5 value
+\f2\b0 \cf0 ,\uc0\u8232             \})\u8232     \}\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232             \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 Input \cf9 ref\cf3 ="sample" \cf9 update\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 />\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 txt
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 hr
+\f2\b0 \cf0 />\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 input \cf9 ref\cf3 ="sample1" \cf9 type\cf3 ="text" \cf9 onChange\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 />\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 txt1
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232         )\u8232     \}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Input 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 input \cf9 type\cf3 ="text" \cf9 onChange\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .\cf7 update\cf0 \}\cb4 />\cb1 \uc0\u8232 \u8232 \u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+class-11\
+\
+life cycle methods\
+\
+mount - when our component is added to dom \
+unmount - when our component is removed from dom\
+\
+\
+app.js\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 ReactDOM 
+\f1\b \cf2 from \cf3 "react-dom"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 constructor\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 super
+\f2\b0 \cf0 ()\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 =\{\uc0\u8232             
+\f1\b \cf5 val
+\f2\b0 \cf0 :\cf9 0\uc0\u8232         \cf0 \}\uc0\u8232     \}\u8232     \cf7 update\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\uc0\u8232             \{
+\f1\b \cf5 val
+\f2\b0 \cf0 :
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 val 
+\f2\b0 \cf0 +\cf9 1\cf0 \})\uc0\u8232     \}\u8232     \cf7 componentWillMount\cf0 ()\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 "componentWillMount will trigger before render method is called or before compo is mounted on dom"
+\f2\b0 \cf0 )\uc0\u8232     \}\u8232     \cf7 componentDidMount\cf0 ()\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 "componentDidMount will trigger when the comp is mounted on the dom"
+\f2\b0 \cf0 )\uc0\u8232     \}\u8232     \cf7 componentWillUnmount\cf0 ()\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 "componentWillUnMount will trigger when the comp is removed from the dom"
+\f2\b0 \cf0 )\uc0\u8232     \}\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 "render"
+\f2\b0 \cf0 )\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232             \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 button \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 val
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232             \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232         )\u8232     \}\u8232 \}\u8232 \u8232 \u8232 \u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 Wrapper 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component\cf0 \{\uc0\u8232     \cf7 mount\cf0 ()\{\uc0\u8232         ReactDOM.
+\f1\b \cf5 render
+\f2\b0 \cf0 (\cb4 <
+\f1\b \cf2 App
+\f2\b0 \cf0 />\cb1 ,
+\f1\b \cf5 document
+\f2\b0 \cf0 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'a'
+\f2\b0 \cf0 ))\uc0\u8232     \}\u8232     \cf7 unmount\cf0 ()\{\uc0\u8232         ReactDOM.\cf7 unmountComponentAtNode\cf0 (
+\f1\b \cf5 document
+\f2\b0 \cf0 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'a'
+\f2\b0 \cf0 ))\uc0\u8232     \}\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232             \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 <
+\f1\b \cf2 button \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 mount\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 >\cb1 mount\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 <
+\f1\b \cf2 button \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 unmount\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 >\cb1 Unmount\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 div \cf9 id\cf3 ="a"
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232         )\u8232     \}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 Wrapper\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+\
+\
+class-12\
+react-component-lifecycle-mounting-usage\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 "react"\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 ReactDOM 
+\f1\b \cf2 from \cf3 "react-dom"\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232     \cf7 constructor\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 super
+\f2\b0 \cf0 ()\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 =\{\uc0\u8232             
+\f1\b \cf5 val
+\f2\b0 \cf0 :\cf9 0\uc0\u8232         \cf0 \}\uc0\u8232     \}\u8232     \cf7 update\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\uc0\u8232             \{
+\f1\b \cf5 val
+\f2\b0 \cf0 :
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 val 
+\f2\b0 \cf0 +\cf9 1\cf0 \})\uc0\u8232     \}\u8232     \cf7 componentWillMount\cf0 ()\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 "componentWillMount will trigger before render method is called or before compo is mounted on dom"
+\f2\b0 \cf0 )\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{
+\f1\b \cf5 m
+\f2\b0 \cf0 :\cf9 3\cf0 \})\uc0\u8232     \}\u8232     \cf7 componentDidMount\cf0 ()\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 "componentDidMount will trigger when the comp is mounted on the dom"
+\f2\b0 \cf0 )\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 "get html element"
+\f2\b0 \cf0 +ReactDOM.\cf7 findDOMNode\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 ))\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 inc 
+\f2\b0 \cf0 = \cf7 setInterval\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 ),\cf9 500\cf0 )\uc0\u8232     \}\u8232     \cf7 componentWillUnmount\cf0 ()\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 "componentWillUnMount will trigger when the comp is removed from the dom"
+\f2\b0 \cf0 )\uc0\u8232         \cf7 clearInterval\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 inc
+\f2\b0 \cf0 )\uc0\u8232     \}\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 "render"
+\f2\b0 \cf0 )\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 \u8232                 \cb4 <
+\f1\b \cf2 button \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 val 
+\f2\b0 \cf0 * 
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 m
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 \u8232         )\u8232     \}\u8232 \}\u8232 \u8232 \u8232 \u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 Wrapper 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component\cf0 \{\uc0\u8232     \cf7 mount\cf0 ()\{\uc0\u8232         ReactDOM.
+\f1\b \cf5 render
+\f2\b0 \cf0 (\cb4 <
+\f1\b \cf2 App
+\f2\b0 \cf0 />\cb1 ,
+\f1\b \cf5 document
+\f2\b0 \cf0 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'a'
+\f2\b0 \cf0 ))\uc0\u8232     \}\u8232     \cf7 unmount\cf0 ()\{\uc0\u8232         ReactDOM.
+\f1\b \cf5 unmountComponentAtNode
+\f2\b0 \cf0 (
+\f1\b \cf5 document
+\f2\b0 \cf0 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'a'
+\f2\b0 \cf0 ))\uc0\u8232     \}\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232             \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 <
+\f1\b \cf2 button \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 mount\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 >\cb1 mount\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232             \cb4 <
+\f1\b \cf2 button \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 unmount\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 >\cb1 Unmount\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 div \cf9 id\cf3 ="a"
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232         )\u8232     \}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 Wrapper\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+\
+class- 13\
+react-component-lifecycle-updating\
+control react component when new props are added\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 ReactDOM 
+\f1\b \cf2 from \cf3 'react-dom'\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component\cf0 \{\uc0\u8232     \cf7 constructor\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 super
+\f2\b0 \cf0 ();\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 = \{\uc0\u8232             
+\f1\b \cf5 incresing
+\f2\b0 \cf0 :
+\f1\b \cf2 false\uc0\u8232         
+\f2\b0 \cf0 \}\uc0\u8232     \}\u8232     \cf7 update\cf0 ()\{\uc0\u8232         ReactDOM.\cf7 render\cf0 (\cb4 <
+\f1\b \cf2 App \cf9 val\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 val
+\f2\b0 \cf0 +\cf9 1\cf0 \}\cb4 />\cb1 ,
+\f1\b \cf5 document
+\f2\b0 \cf0 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'root'
+\f2\b0 \cf0 ))\uc0\u8232     \}\u8232     \cf7 componentWillReceiveProps\cf0 (nextProps)\{\uc0\u8232       
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{
+\f1\b \cf5 incresing
+\f2\b0 \cf0 :nextProps.
+\f1\b \cf5 val 
+\f2\b0 \cf0 > 
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 val
+\f2\b0 \cf0 \})\uc0\u8232     \}\u8232     \cf7 shouldComponentUpdate\cf0 (nextProps, nextState)\{\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 nextProps.
+\f1\b \cf5 val
+\f2\b0 \cf0 %\cf9 5 \cf0 === \cf9 0\uc0\u8232     \cf0 \}\uc0\u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 incresing
+\f2\b0 \cf0 )\uc0\u8232         
+\f1\b \cf2 return 
+\f2\b0 \cf0 \cb4 <
+\f1\b \cf2 button \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 val
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \}\u8232     \cf7 componentDidUpdate\cf0 (prevProps, prevState)\{\uc0\u8232         
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 `preProps: 
+\f2\b0 \cf0 $\{prevProps.
+\f1\b \cf5 val
+\f2\b0 \cf0 \}
+\f1\b \cf3 `
+\f2\b0 \cf0 )\uc0\u8232     \}\u8232 \}\u8232 \u8232 App.
+\f1\b \cf5 defaultProps 
+\f2\b0 \cf0 = \{\uc0\u8232     
+\f1\b \cf5 val
+\f2\b0 \cf0 :\cf9 0\uc0\u8232 \cf0 \}\uc0\u8232 \u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+class- 14\
+\
+fetch ajax call\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 
+\f3\i\b0 \cf8 //import ReactDOM from 'react-dom'\uc0\u8232 \u8232 
+\f1\i0\b \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.
+\f1\b \cf5 Component 
+\f2\b0 \cf0 \{\uc0\u8232     \cf7 constructor\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 super
+\f2\b0 \cf0 ();\uc0\u8232         
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 = \{\uc0\u8232             
+\f1\b \cf5 items
+\f2\b0 \cf0 :[]\uc0\u8232         \}\u8232     \}\u8232     \cf7 filter\cf0 (e)\{\uc0\u8232       
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{
+\f1\b \cf5 filter
+\f2\b0 \cf0 :e.
+\f1\b \cf5 target
+\f2\b0 \cf0 .
+\f1\b \cf5 value
+\f2\b0 \cf0 \})\uc0\u8232     \}\u8232     \cf7 componentWillMount\cf0 ()\{\uc0\u8232         \cf7 fetch\cf0 (
+\f1\b \cf3 'https://swapi.co/api/people/?format=json'
+\f2\b0 \cf0 ).\cf7 then\cf0 (response => response.\cb6 json\cb1 ())\uc0\u8232             .\cf7 then\cf0 ((\{results:items\})=>
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{items\}))\uc0\u8232     \}\u8232 \u8232     \cf7 render\cf0 ()\{\uc0\u8232         
+\f1\b \cf2 let 
+\f2\b0 \cf10 items \cf0 = 
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 items\uc0\u8232         \cf2 if
+\f2\b0 \cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 filter
+\f2\b0 \cf0 )\{\uc0\u8232             \cf10 items \cf0 = \cf10 items\cf0 .\cf7 filter\cf0 (item => item.
+\f1\b \cf5 name
+\f2\b0 \cf0 .\cf7 toLowerCase\cf0 ().\cf7 includes\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 filter
+\f2\b0 \cf0 .\cf7 toLowerCase\cf0 ()))\uc0\u8232         \}\u8232        
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232            \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232                \cb4 <
+\f1\b \cf2 input \cf9 type\cf3 ="text" \cf9 onChange\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 filter\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 />\cb1 \uc0\u8232 \u8232                \{\cf10 items\cf0 .\cf7 map\cf0 (item=>\cb4 <
+\f1\b \cf2 Person \cf9 key\cf3 =
+\f2\b0 \cf0 \cb1 \{item.
+\f1\b \cf5 name
+\f2\b0 \cf0 \}
+\f1\b \cf9 \cb4 person\cf3 =
+\f2\b0 \cf0 \cb1 \{item\}\cb4 />\cb1 )\}\uc0\u8232            \cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232        )\u8232 \u8232     \}\u8232 \}\u8232 \u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Person 
+\f2\i0 = (prop) => \cb4 <
+\f1\b \cf2 h4
+\f2\b0 \cf0 >\cb1 \{prop.person.
+\f1\b \cf5 name
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 h4
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+index.js\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 ReactDom 
+\f1\b \cf2 from \cf3 'react-dom'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 App 
+\f1\b \cf2 from \cf3 './App'\uc0\u8232 
+\f2\b0 \cf0 ReactDom.\cf7 render\cf0 (\cb4 <
+\f1\b \cf2 App \cf9 cat\cf3 =
+\f2\b0 \cf0 \cb1 \{\cf9 5\cf0 +\cf9 7\cf0 \}\cb4  
+\f1\b \cf9 txt\cf3 ="this is the props value"
+\f2\b0 \cf0 />\cb1 ,
+\f1\b \cf5 document
+\f2\b0 \cf0 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'root'
+\f2\b0 \cf0 ))\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+\
+class- 15\
+\
+//high order components\
+\
+to share multiple functionality between multiple components\
+take a comp and return a new comp\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React, \{ Component \} 
+\f1\b \cf2 from \cf3 'react'
+\f2\b0 \cf0 ;\uc0\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 HOC 
+\f2\i0 = (Innercomp) => 
+\f1\b \cf2 class  extends 
+\f2\b0 \cf0 Component\{\uc0\u8232 	\cf7 constructor\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 super
+\f2\b0 \cf0 ();\uc0\u8232 		
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 = \{\uc0\u8232 			
+\f1\b \cf5 count
+\f2\b0 \cf0 :\cf9 0\uc0\u8232 		\cf0 \}\uc0\u8232 	\}\u8232 	\cf7 update\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{
+\f1\b \cf5 count
+\f2\b0 \cf0 :
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 count
+\f2\b0 \cf0 +\cf9 1\cf0 \})\uc0\u8232 	\}\u8232 	\cf7 componentWillMount\cf0 ()\{\uc0\u8232 		
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 'high order component'
+\f2\b0 \cf0 )\uc0\u8232 	\}\u8232 	\cf7 render\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 \cb4 <
+\f1\b \cf2 Innercomp 
+\f2\b0 \cf0 \cb1 \{...
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 \}\cb4  \cb1 \{...
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 \}\cb4  
+\f1\b \cf9 update\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4  />\cb1 \uc0\u8232 	\}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 Component \{\uc0\u8232 	\cf7 render\cf0 () \{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 			\cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 Button
+\f2\b0 \cf0 >\cb1 react\cb4 </
+\f1\b \cf2 Button
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 LabelHoc
+\f2\b0 \cf0 >\cb1 sample\cb4 </
+\f1\b \cf2 LabelHoc
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		)\u8232 	\}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 const 
+\f2\b0 \cf10 Button \cf0 = 
+\f3\i HOC
+\f2\i0 ((props) => \cb4 <
+\f1\b \cf2 button \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{props.\cf7 update\cf0 \}\cb4 >\cb1 \{props.
+\f1\b \cf5 children
+\f2\b0 \cf0 \}-\{props.
+\f1\b \cf5 count
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 )\uc0\u8232 \u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 Label 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 Component \{\uc0\u8232 	\cf7 componentWillMount\cf0 ()\{\uc0\u8232 		
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf3 'label comp'
+\f2\b0 \cf0 )\uc0\u8232 	\}\u8232 	\cf7 render\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 			\cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 label \cf9 onMouseMove\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .\cf7 update\cf0 \}\cb4 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 children
+\f2\b0 \cf0 \}-\{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 count
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 label
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		)\u8232 	\}\u8232 \}\u8232 
+\f1\b \cf2 const 
+\f2\b0 \cf10 LabelHoc \cf0 = 
+\f3\i HOC
+\f2\i0 (Label)\uc0\u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App;\
+\
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React, \{Component\} 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \u8232 \cf2 const 
+\f3\i\b0 \cf0 HOC 
+\f2\i0 = (Innercomp) => 
+\f1\b \cf2 class extends 
+\f2\b0 \cf0 Component \{\uc0\u8232 	\cf7 constructor\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 super
+\f2\b0 \cf0 ();\uc0\u8232 		
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 = \{\uc0\u8232 			
+\f1\b \cf5 count
+\f2\b0 \cf0 :\cf9 0\uc0\u8232 		\cf0 \}\uc0\u8232 	\}\u8232 	\cf7 update\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{
+\f1\b \cf5 count
+\f2\b0 \cf0 :
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 count
+\f2\b0 \cf0 +\cf9 1\cf0 \})\uc0\u8232 	\}\u8232 	\cf7 render\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 \cb4 <
+\f1\b \cf2 Innercomp 
+\f2\b0 \cf0 \cb1 \{...
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 \}\cb4  \cb1 \{...
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 \}\cb4  
+\f1\b \cf9 update\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 update\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 )\}\cb4 />\cb1 \uc0\u8232 	\}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 Component \{\uc0\u8232 	\cf7 render\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 			\cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 Button
+\f2\b0 \cf0 >\cb1 react\cb4 </
+\f1\b \cf2 Button
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 LabelHOC
+\f2\b0 \cf0 >\cb1 sample\cb4 </
+\f1\b \cf2 LabelHOC
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		)\u8232 	\}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 const 
+\f2\b0 \cf10 Button \cf0 = 
+\f3\i HOC
+\f2\i0 ((props) => \cb4 <
+\f1\b \cf2 button \cf9 onClick\cf3 =
+\f2\b0 \cf0 \cb1 \{props.\cf7 update\cf0 \}\cb4 >\cb1 \{props.
+\f1\b \cf5 children
+\f2\b0 \cf0 \} -\{props.
+\f1\b \cf5 count
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 )\uc0\u8232 \u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 Label 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 Component \{\uc0\u8232 	\cf7 render\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 			\cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 label \cf9 onMouseMove\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .\cf7 update\cf0 \}\cb4 >\cb1 \{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 children
+\f2\b0 \cf0 \}-\{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 count
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 label
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		)\u8232 	\}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 const 
+\f2\b0 \cf10 LabelHOC \cf0 = 
+\f3\i HOC
+\f2\i0 (Label)\uc0\u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+//shivanis todo example\
+\
+import React, \{ Component \} from 'react';\
+import './App.css';\
+\
+class App extends Component \{\
+	render() \{\
+		return (\
+			<div className="App">\
+				<Content/>\
+\
+			</div>);\
+	\}\
+\}\
+\
+class Content extends Component\{\
+	constructor()\{\
+		super();\
+		this.state =\{\
+			data:\
+				[\
+					\{"name":"John", "age":"20" \},\
+					\{"name":"SAm", "age":"30" \},\
+					\{"name":"Pam", "age":"23" \},\
+					\{"name":"Pam", "age":"28" \},\
+					\{"name":"Julie", "age":"24" \}\
+\
+				]\
+		\}\
+	\}\
+	changeContent(e) \{\
+		console.log('Name changed to '+ this.refs.name.value);\
+		console.log('Age chnaged to '+ this.refs.age.value);\
+	\}\
+\
+\
+\
+	sendContent() \{\
+		var person =\{\}\
+		person.name = this.refs.name.value,\
+			person.age = this.refs.age.value,\
+			console.log(person)\
+		var newPerson = this.state.data.slice()\
+		console.log(newPerson)\
+		newPerson.push(person)\
+		this.setState(\{ data: newPerson \})\
+	\}\
+\
+\
+	render () \{\
+		return (\
+			<div className="App-content">\
+				<div className="container">\
+					<div className="jumbotron">\
+						<table className="table table-responsive table-bordered">\
+							<tbody>\
+							\{this.state.data.map(\
+								(person, i) => <TableRow  key= \{i\} data = \{person\} />\
+							)\
+							\}\
+							</tbody>\
+						</table>\
+						<div>\
+							name:<input type="text" ref="name"  onChange=\{this.changeContent.bind(this)\}/>\
+							age:<input type="text" ref="age"  onChange=\{this.changeContent.bind(this)\} />\
+							<button onClick=\{this.sendContent.bind(this)\}>submit</button>\
+						</div>\
+\
+					</div>\
+\
+				</div>\
+			</div>\
+		);\
+	\}\
+\}\
+\
+\
+class TableRow  extends Component\{ /*this component is used in content component to disply the dynamic data using props(data). here we are accessing the name & age values of an data obj(which is declared in content component) using props*/\
+\
+	render()\{\
+\
+		return (\
+			<tr>\
+				<td>\{this.props.data.name\}</td>\
+				<td>\{this.props.data.age\}</td>\
+			</tr>\
+\
+		);\
+	\}\
+\}\
+\
+\
+\
+\
+export default App;\
+\
+\
+pushing rows example\
+\
+import React, \{ Component \} from 'react';\
+import '../css/App.css';\
+\
+class App extends Component \{\
+	render() \{\
+		return (\
+			<div className="App">\
+				<Content/>\
+\
+			</div>);\
+	\}\
+\}\
+\
+class Content extends Component \{\
+	constructor()\{\
+		super();\
+		this.state = \{\
+			data:\
+				[\
+					\{"name":"John", "age":"20" \},\
+					\{"name":"SAm", "age":"30" \},\
+					\{"name":"Pam", "age":"23" \},\
+					\{"name":"Pam", "age":"28" \},\
+					\{"name":"Julie", "age":"24" \}\
+\
+				]\
+		\}\
+	\}\
+	update(e)\{\
+		console.log('Name changed to '+ this.refs.name.value);\
+		console.log('Age chnaged to '+ this.refs.age.value);\
+	\}\
+	saveperson()\{\
+var person =\{\}\
+		person.name = this.refs.name.value\
+		person.age = this.refs.age.value\
+		var newPerson = this.state.data.slice()\
+		console.log('new person',newPerson)\
+		newPerson.push(person)\
+		this.setState(\{data:newPerson\})\
+\
+	\}\
+render()\{\
+	let items = this.state.data\
+	return (\
+		<div>\
+			<table>\
+				<tbody>\
+				\{items.map((person,i)=><TableRow key=\{i\} data=\{person\}/>)\}\
+				</tbody>\
+			</table>\
+			<div>\
+				name:<input type="text" ref="name" onChange=\{this.update.bind(this)\}/>\
+				age:<input type="text" ref="age" onChange=\{this.update.bind(this)\}/>\
+				save:<button onClick=\{this.saveperson.bind(this)\}>click</button>\
+			</div>\
+		</div>\
+\
+	)\
+\}\
+\}\
+\
+class TableRow  extends Component\{ /*this component is used in content component to disply the dynamic data using props(data). here we are accessing the name & age values of an data obj(which is declared in content component) using props*/\
+\
+	render()\{\
+\
+		return (\
+			<tr>\
+				<td>\{this.props.data.name\}</td>\
+				<td>\{this.props.data.age\}</td>\
+			</tr>\
+\
+		);\
+	\}\
+\}\
+\
+export default App;\
+\
+\
+react children utilities\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React, \{Component\} 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 Component\{\uc0\u8232 	\cf7 render\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 			\cb4 <
+\f1\b \cf2 Parent
+\f2\b0 \cf0 >\cb1 \uc0\u8232                 \cb4 <
+\f1\b \cf2 div \cf9 className\cf3 ="sample1"
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\u8232 			\cb4 </
+\f1\b \cf2 Parent
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		)\u8232 	\}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 Parent 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 Component \{\uc0\u8232 	\cf7 render\cf0 ()\{\uc0\u8232 		
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .\cf7 children\cf0 )\uc0\u8232 		
+\f3\i \cf8 //let items = this.props.children.map(child => child)\uc0\u8232 		//let items = React.Children.map(this.props.children,child => child)\u8232 		//let items = React.Children.toArray(this.props.children)\u8232 		//let items = React.Children.forEach(this.props.children,child=>console.log(child.props.className))\u8232 		
+\f1\i0\b \cf2 let 
+\f2\b0 \cf10 items \cf0 = React.
+\f1\b \cf5 Children
+\f2\b0 \cf0 .\cf7 only\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .\cf7 children\cf0 )\uc0\u8232 		
+\f1\b \cf5 console
+\f2\b0 \cf0 .\cf7 log\cf0 (\cf10 items\cf0 )\uc0\u8232 		
+\f1\b \cf2 return null\uc0\u8232 	
+\f2\b0 \cf0 \}\uc0\u8232 \}\u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+react clone element\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React, \{Component\} 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \u8232 \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.
+\f1\b \cf5 Component 
+\f2\b0 \cf0 \{\uc0\u8232 	\cf7 render\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 			\cb4 <
+\f1\b \cf2 Buttons
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 button \cf9 value\cf3 ="A"
+\f2\b0 \cf0 >\cb1 A\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 button \cf9 value\cf3 ="B"
+\f2\b0 \cf0 >\cb1 B\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 button \cf9 value\cf3 ="C"
+\f2\b0 \cf0 >\cb1 C\cb4 </
+\f1\b \cf2 button
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 </
+\f1\b \cf2 Buttons
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		)\u8232 	\}\u8232 \}\u8232 \u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 Buttons 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.
+\f1\b \cf5 Component 
+\f2\b0 \cf0 \{\uc0\u8232 	\cf7 constructor\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 super
+\f2\b0 \cf0 ();\uc0\u8232 		
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state 
+\f2\b0 \cf0 =\{\uc0\u8232 			
+\f1\b \cf5 selected
+\f2\b0 \cf0 :
+\f1\b \cf3 'none'\uc0\u8232 		
+\f2\b0 \cf0 \}\uc0\u8232 	\}\u8232 	\cf7 selectItem\cf0 (selected)\{\uc0\u8232 		
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 setState\cf0 (\{selected\})\uc0\u8232 	\}\u8232 	\cf7 render\cf0 ()\{\uc0\u8232 		
+\f1\b \cf2 let 
+\f3\i\b0 \cf0 fn 
+\f2\i0 = child => React.
+\f1\b \cf5 cloneElement
+\f2\b0 \cf0 (child,\{\uc0\u8232 			
+\f1\b \cf5 onClick
+\f2\b0 \cf0 :
+\f1\b \cf2 this
+\f2\b0 \cf0 .\cf7 selectItem\cf0 .\cf7 bind\cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 ,child.
+\f1\b \cf5 props
+\f2\b0 \cf0 .
+\f1\b \cf5 value
+\f2\b0 \cf0 )\uc0\u8232 		\})\u8232 		
+\f1\b \cf2 let 
+\f2\b0 \cf10 items \cf0 = React.
+\f1\b \cf5 Children
+\f2\b0 \cf0 .
+\f1\b \cf5 map
+\f2\b0 \cf0 (
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 props
+\f2\b0 \cf0 .\cf7 children\cf0 ,
+\f3\i fn
+\f2\i0 )\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 			\cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 h2
+\f2\b0 \cf0 >\cb1 you have selected:\{
+\f1\b \cf2 this
+\f2\b0 \cf0 .
+\f1\b \cf5 state
+\f2\b0 \cf0 .
+\f1\b \cf5 selected
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 h2
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\{\cf10 items\cf0 \}\uc0\u8232 			\cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		)\u8232 	\}\u8232 \}\u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\
+react router\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'
+\f2\b0 \cf0 ;\uc0\u8232 
+\f1\b \cf2 import 
+\f2\b0 \cf0 \{ \cf10 Router\cf0 , \cf10 Route\cf0 , \cf10 Link\cf0 , hashHistory \} 
+\f1\b \cf2 from \cf3 'react-router'
+\f2\b0 \cf0 ;\uc0\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Home 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 Home\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links 
+\f2\b0 \cf0 /></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 ;\uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 About 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 About\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links 
+\f2\b0 \cf0 /></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 ;\uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Contact 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 Contact\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links 
+\f2\b0 \cf0 /></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 ;\uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Links 
+\f2\i0 = () =>\uc0\u8232 	\cb4 <
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 to\cf3 ="/"
+\f2\b0 \cf0 ><p>\cb1 Home</p>\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 to\cf3 =\'93/about"
+\f2\b0 \cf0 ><p>\cb1 About\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 to\cf3 =\'93/contact"
+\f2\b0 \cf0 ><p>\cb1 Contact</p>\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	\cb4 </
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 App 
+\f2\i0 = () => \{\uc0\u8232 	
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 		\cb4 <
+\f1\b \cf2 Router \cf9 history\cf3 =
+\f2\b0 \cf0 \cb1 \{ hashHistory \}\cb4 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="/" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Home
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="/about" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i About
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="/contact" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Contact
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 </
+\f1\b \cf2 Router
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	)\u8232 \};\u8232 \u8232 
+\f1\b \cf2 export default 
+\f3\i\b0 \cf0 App
+\f2\i0 ;\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+activeClass vs activeStyle\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f2 \cf0 \cb4 <!doctype 
+\f1\b \cf9 html
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \cb4 <
+\f1\b \cf2 html \cf9 lang=\cf3 "en"
+\f2\b0 \cf0 >\cb1 \uc0\u8232   \cb4 <
+\f1\b \cf2 head
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \cb4 <
+\f1\b \cf2 meta \cf9 charset=\cf3 "utf-8"
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \cb4 <
+\f1\b \cf2 meta \cf9 name=\cf3 "viewport" \cf9 content=\cf3 "width=device-width, initial-scale=1"
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \cb4 <
+\f1\b \cf2 link \cf9 rel=\cf3 "stylesheet" \cf9 href=\cf3 "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \cb4 <
+\f1\b \cf2 script \cf9 src=\cf3 "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+\f2\b0 \cf0 ></
+\f1\b \cf2 script
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \cb4 <
+\f1\b \cf2 title
+\f2\b0 \cf0 >\cb1 React App\cb4 </
+\f1\b \cf2 title
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \cb4 <
+\f1\b \cf2 style
+\f2\b0 \cf0 >\cb1 \uc0\u8232       .
+\f1\b \cf2 active 
+\f2\b0 \cf0 \{\uc0\u8232         
+\f1\b \cf9 color
+\f2\b0 \cf0 : 
+\f1\b \cf3 blueviolet
+\f2\b0 \cf0 ;\uc0\u8232       \}\u8232     \cb4 </
+\f1\b \cf2 style
+\f2\b0 \cf0 >\cb1 \uc0\u8232   \cb4 </
+\f1\b \cf2 head
+\f2\b0 \cf0 >\cb1 \uc0\u8232   \cb4 <
+\f1\b \cf2 body
+\f2\b0 \cf0 >\cb1 \uc0\u8232     \cb4 <
+\f1\b \cf2 div \cf9 id=\cf3 "root"
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232   \cb4 </
+\f1\b \cf2 body
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \cb4 </
+\f1\b \cf2 html
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0 \cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'
+\f2\b0 \cf0 ;\uc0\u8232 
+\f1\b \cf2 import 
+\f2\b0 \cf0 \{\cf10 Router\cf0 , \cf10 Route\cf0 , \cf10 Link\cf0 , browserHistory\} 
+\f1\b \cf2 from \cf3 'react-router'\uc0\u8232 \u8232 \cf2 const 
+\f3\i\b0 \cf0 Home 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 Home\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links
+\f2\b0 \cf0 /></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 AboutUs 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 AboutUs\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links
+\f2\b0 \cf0 /></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Contactus 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 Contactus\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links
+\f2\b0 \cf0 /></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Links 
+\f2\i0 = () =>\uc0\u8232     \cb4 <
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 activeStyle\cf3 =
+\f2\b0 \cf0 \cb1 \{\{
+\f1\b \cf5 color
+\f2\b0 \cf0 :
+\f1\b \cf3 'orange'
+\f2\b0 \cf0 \}\}\cb4  
+\f1\b \cf9 to\cf3 ="/"
+\f2\b0 \cf0 >\cb1 Home\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 activeStyle\cf3 =
+\f2\b0 \cf0 \cb1 \{\{
+\f1\b \cf5 color
+\f2\b0 \cf0 :
+\f1\b \cf3 'orange'
+\f2\b0 \cf0 \}\}\cb4  
+\f1\b \cf9 to\cf3 ="/AboutUs"
+\f2\b0 \cf0 >\cb1 AboutUs\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 activeClassName\cf3 ='active' \cf9 to\cf3 ="/Contactus"
+\f2\b0 \cf0 >\cb1 Contactus\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	 \cb4 </
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 App 
+\f2\i0 = () => \{\uc0\u8232 	
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 		\cb4 <
+\f1\b \cf2 Router \cf9 history\cf3 =
+\f2\b0 \cf0 \cb1 \{ browserHistory \}\cb4 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="/" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Home
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="/AboutUs" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i AboutUs
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="/Contactus" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Contactus
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	\cb4 </
+\f1\b \cf2 Router
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	)\u8232 			\}\u8232 		
+\f1\b \cf2 export default 
+\f3\i\b0 \cf0 App\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\i0 \cf0 \
+\
+\
+Nested Routes\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f1\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'
+\f2\b0 \cf0 ;\uc0\u8232 
+\f1\b \cf2 import 
+\f2\b0 \cf0 \{\cf10 Router\cf0 , \cf10 Route\cf0 , \cf10 Link\cf0 , browserHistory\} 
+\f1\b \cf2 from \cf3 'react-router'\uc0\u8232 \u8232 \cf2 const 
+\f3\i\b0 \cf0 Home 
+\f2\i0 = (props) => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 Home\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links
+\f2\b0 \cf0 />\cb1 \{props.
+\f1\b \cf5 children
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 AboutUs 
+\f2\i0 = (props) => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 AboutUs\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links
+\f2\b0 \cf0 />\cb1 \{props.
+\f1\b \cf5 children
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Contactus 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 Contactus\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links
+\f2\b0 \cf0 /></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Links 
+\f2\i0 = () =>\uc0\u8232     \cb4 <
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 activeStyle\cf3 =
+\f2\b0 \cf0 \cb1 \{\{
+\f1\b \cf5 color
+\f2\b0 \cf0 :
+\f1\b \cf3 'orange'
+\f2\b0 \cf0 \}\}\cb4  
+\f1\b \cf9 to\cf3 ="/"
+\f2\b0 \cf0 >\cb1 Home\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 activeStyle\cf3 =
+\f2\b0 \cf0 \cb1 \{\{
+\f1\b \cf5 color
+\f2\b0 \cf0 :
+\f1\b \cf3 'orange'
+\f2\b0 \cf0 \}\}\cb4  
+\f1\b \cf9 to\cf3 ="/AboutUs"
+\f2\b0 \cf0 >\cb1 AboutUs\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 activeClassName\cf3 ='active' \cf9 to\cf3 ="/AboutUs/Contactus"
+\f2\b0 \cf0 >\cb1 Contactus\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	 \cb4 </
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 App 
+\f2\i0 = () => \{\uc0\u8232 	
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 		\cb4 <
+\f1\b \cf2 Router \cf9 history\cf3 =
+\f2\b0 \cf0 \cb1 \{ browserHistory \}\cb4 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="/" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Home
+\f2\i0 \}\cb4 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="AboutUs" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i AboutUs
+\f2\i0 \}\cb4 >\cb1 \uc0\u8232 					\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="Contactus" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Contactus
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 </
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 </
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 \u8232 	\cb4 </
+\f1\b \cf2 Router
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	)\u8232 			\}\u8232 		
+\f1\b \cf2 export default 
+\f3\i\b0 \cf0 App\
+\
+\
+indexroute\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i0\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'
+\f2\b0 \cf0 ;\uc0\u8232 
+\f1\b \cf2 import 
+\f2\b0 \cf0 \{\cf10 Router\cf0 , \cf10 Route\cf0 , \cf10 Link\cf0 , \cf10 IndexRoute\cf0 , browserHistory\} 
+\f1\b \cf2 from \cf3 'react-router'\uc0\u8232 \u8232 \cf2 const 
+\f3\i\b0 \cf0 Outer 
+\f2\i0 = (props) => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 mythri consulting\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links
+\f2\b0 \cf0 />\cb1 \{props.
+\f1\b \cf5 children
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 AboutUs 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 AboutUs\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Contactus 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 Contactus\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Links 
+\f2\i0 = () =>\uc0\u8232     \cb4 <
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 activeStyle\cf3 =
+\f2\b0 \cf0 \cb1 \{\{
+\f1\b \cf5 color
+\f2\b0 \cf0 :
+\f1\b \cf3 'green'
+\f2\b0 \cf0 \}\}\cb4  
+\f1\b \cf9 to\cf3 ="/"
+\f2\b0 \cf0 >\cb1 Home\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 activeStyle\cf3 =
+\f2\b0 \cf0 \cb1 \{\{
+\f1\b \cf5 color
+\f2\b0 \cf0 :
+\f1\b \cf3 'green'
+\f2\b0 \cf0 \}\}\cb4  
+\f1\b \cf9 to\cf3 ="/AboutUs"
+\f2\b0 \cf0 >\cb1 AboutUs\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		\cb4 <
+\f1\b \cf2 Link \cf9 activeStyle\cf3 =
+\f2\b0 \cf0 \cb1 \{\{
+\f1\b \cf5 color
+\f2\b0 \cf0 :
+\f1\b \cf3 'green'
+\f2\b0 \cf0 \}\}\cb4  
+\f1\b \cf9 to\cf3 ="/Contactus"
+\f2\b0 \cf0 >\cb1 Contactus\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	 \cb4 </
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 App 
+\f2\i0 = () => \{\uc0\u8232 	
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 		\cb4 <
+\f1\b \cf2 Router \cf9 history\cf3 =
+\f2\b0 \cf0 \cb1 \{ browserHistory \}\cb4 >\cb1 \uc0\u8232 			\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="/" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Outer
+\f2\i0 \}\cb4 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 IndexRoute \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i AboutUs
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 IndexRoute
+\f2\b0 \cf0 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 Route \cf9 path\cf3 ="Contactus" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Contactus
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 			\cb4 </
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 	\cb4 </
+\f1\b \cf2 Router
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	)\u8232 			\}\u8232 		
+\f1\b \cf2 export default 
+\f3\i\b0 \cf0 App\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\
+router params\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i0\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 \{\cf10 Router\cf0 ,\cf10 Route\cf0 ,\cf10 IndexRoute\cf0 ,hashHistory,\cf10 Link\cf0 \} 
+\f1\b \cf2 from \cf3 'react-router'\uc0\u8232 \u8232 \cf2 const 
+\f3\i\b0 \cf0 Home 
+\f2\i0 = (props) => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links
+\f2\b0 \cf0 /><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{props.
+\f1\b \cf5 params
+\f2\b0 \cf0 .
+\f1\b \cf5 message
+\f2\b0 \cf0 ||
+\f1\b \cf3 'hello'
+\f2\b0 \cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 ;\uc0\u8232 \u8232 \u8232 
+\f1\b \cf2 const  
+\f3\i\b0 \cf0 Links 
+\f2\i0 =() =>\uc0\u8232  \cb4 <
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	 \cb4 <
+\f1\b \cf2 Link \cf9 \cb4 to\cf3 ="/"
+\f2\b0 \cf0 \cb4 >\cb1 Home\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	 \cb4 <
+\f1\b \cf2 Link \cf9 \cb4 to\cf3 ="/about"
+\f2\b0 \cf0 \cb4 >\cb1 aboutus\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	 \cb4 <
+\f1\b \cf2 Link \cf9 \cb4 to\cf3 ="/contact"
+\f2\b0 \cf0 \cb4 >\cb1 contactus\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232  \cb4 </
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232 	\cf7 render\cf0 () \{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 			\cb4 <
+\f1\b \cf2 Router \cf9 \cb4 history\cf3 =
+\f2\b0 \cf0 \cb1 \{hashHistory\}\cb4 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 Route \cf9 \cb4 path\cf3 ='/(:message)' \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Home
+\f2\i0 \}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 			\cb4 </
+\f1\b \cf2 Router
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		)\u8232 	\}\u8232 \}\u8232 \u8232 \u8232 \u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\i \cf0 \
+https://github.com/ReactTraining/react-router/blob/master/docs/guides/Histories.md#browserhistory\
+\
+hashhistroy\
+\
+Hash history works without configuring your server with  setting query string to the url\
+\
+some older browsers do not support the HTML5 History API. If it's important to you to not use full page reloads for navigation on those older browsers, then you will also need to use hashHistory\
+\
+When a history transitions around your app with push or replace, it can store "location state" that doesn't show up in the URL on the new location, think of it a little bit like post data in an HTML form.\
+\
+The DOM API that hash history uses to transition around is simply window.location.hash = newHash\
+\
+\
+\
+browserhistroy\
+\
+production web applications should use browserHistory for the cleaner URLs\
+\
+and for support for server-side rendering, which is impossible with hashHistory\
+\
+\
+comp with nested routes\
+\
+index route \
+import React from 'react';\
+import \{Router, Route, Link, IndexRoute, browserHistory\} from 'react-router'\
+\
+const Outer = (props) => <div><h1>Mythri consulting </h1><Links/>\{props.children\}</div>\
+const AboutUs = () => <div><h1>AboutUs</h1><p>Mythri Consulting is a one-stop hub for IT Training and Placement services. With many years of experience and high quality team of experts, we have established ourselves as a pioneer in the Industry. We help individuals with IT backgrounds, either graduates or post graduates, through industry level training in major advance technologies such as Java UI, Big Data, .Net, Java, iOS/Android, Infomatica, Websphere Admin, Weblogin Admin, Selenium Automation QA, Sales Force and many others.</p></div>\
+const ContactUs = () => <div><h1>ContactUs</h1></div>\
+\
+const Links =() =>\
+<nav>\
+	<Link  activeStyle=\{\{color:'orange'\}\} to="/">Home</Link>\
+	<Link activeStyle=\{\{color:'orange'\}\} to="/Aboutus">AboutUs</Link>\
+	<Link activeClassName='active' to="/Contactus">ContactUs</Link>\
+	</nav>\
+\
+const App = () => \{\
+return (\
+ 	<Router history=\{browserHistory\}>\
+		<Route path="/" component=\{Outer\}>\
+			<IndexRoute  component=\{AboutUs\}></IndexRoute>\
+				<Route path="Contactus" component=\{ContactUs\}></Route>\
+\
+		</Route>\
+\
+		</Router>\
+ )\}\
+\
+export default App\
+\
+\
+\
+eact-react-router-activestyle-activeclassname\
+\
+router prameters -  \
+\
+\
+route parameter will allows us to pass the portion of path to the component\
+params is the word given by react router which checks the arguments in the path\
+\
+\
+import React from 'react';\
+import \{Router, Route, Link, IndexRoute, browserHistory\} from 'react-router'\
+\
+\
+const Outer = (props) =><div><h1>\{props.params.message || 'Home'\}</h1><Links/></div>\
+\
+const Links =() =>\
+<nav>\
+	<Link  to="/">Home</Link>\
+	<Link to="/Aboutus">AboutUs</Link>\
+	<Link  to="/Contactus">ContactUs</Link>\
+	</nav>\
+\
+const App = () => \{\
+return (\
+ 	<Router history=\{browserHistory\}>\
+		<Route path="/(:message)" component=\{Outer\}></Route>\
+\
+	</Router>\
+ )\}\
+\
+export default App\
+\
+\
+\
+\
+Named routes in named  components\
+\
+home(nav)+ home body - home (named com)\
+about(nav)+ aboutus body - about us (named comp)\
+\
+\
+import React from 'react';\
+import \{Router, Route, Link, IndexRoute, browserHistory\} from 'react-router'\
+\
+\
+const Home =() => <h1>Home</h1>\
+const HomeBody =()=> <div>this is my home</div>\
+const AboutUs =() => <h1>AboutUs</h1>\
+const AboutUsBody =()=> <div>this is my AboutUsBody page</div>\
+\
+const Container = (props) => <div>\{props.header\}\{props.body\}<Links/></div>\
+\
+const Links = () =>\
+<nav>\
+	<Link to="/">Home</Link>\
+	<Link to="/aboutus">AboutUs</Link>\
+	</nav>\
+\
+class App extends React.Component \{\
+	render()\{\
+		return (\
+			<Router history=\{browserHistory\}>\
+				<Route path="/" component=\{Container\}>\
+					<IndexRoute components=\{\{header:Home,body:HomeBody\}\}/>\
+					<Route path="/aboutus" components=\{\{header:AboutUs,body:AboutUsBody\}\}></Route>\
+			     </Route>\
+\
+			</Router>\
+		)\
+	\}\
+\}\
+\
+real\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i0\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'\uc0\u8232 \cf2 import 
+\f2\b0 \cf0 \{\cf10 Router\cf0 ,\cf10 Route\cf0 ,\cf10 IndexRoute\cf0 ,hashHistory,\cf10 Link\cf0 \} 
+\f1\b \cf2 from \cf3 'react-router'\uc0\u8232 \u8232 \cf2 const 
+\f3\i\b0 \cf0 Home 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 home\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Homebody 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 homebody\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 About 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 about\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Aboutbody 
+\f2\i0 = () => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 aboutbody\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 ;\uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Wrapper 
+\f2\i0 = (props) => \cb4 <
+\f1\b \cf2 div
+\f2\b0 \cf0 ><
+\f1\b \cf2 Links
+\f2\b0 \cf0 /><
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \{props.\cf7 header\cf0 \}\{props.\cf7 body\cf0 \}\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 ></
+\f1\b \cf2 div
+\f2\b0 \cf0 >\cb1 ;\uc0\u8232 \u8232 
+\f1\b \cf2 const  
+\f3\i\b0 \cf0 Links 
+\f2\i0 =() =>\uc0\u8232  \cb4 <
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	 \cb4 <
+\f1\b \cf2 Link \cf9 \cb4 to\cf3 ="/"
+\f2\b0 \cf0 \cb4 >\cb1 Home\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	 \cb4 <
+\f1\b \cf2 Link \cf9 \cb4 to\cf3 ="/about"
+\f2\b0 \cf0 \cb4 >\cb1 aboutus\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232 	 \cb4 <
+\f1\b \cf2 Link \cf9 \cb4 to\cf3 ="/contact"
+\f2\b0 \cf0 \cb4 >\cb1 contactus\cb4 </
+\f1\b \cf2 Link
+\f2\b0 \cf0 >\cb1 \uc0\u8232  \cb4 </
+\f1\b \cf2 nav
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 class 
+\f2\b0 \cf0 App 
+\f1\b \cf2 extends 
+\f2\b0 \cf0 React.\cf7 Component \cf0 \{\uc0\u8232 	\cf7 render\cf0 () \{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 (\uc0\u8232 			\cb4 <
+\f1\b \cf2 Router \cf9 \cb4 history\cf3 =
+\f2\b0 \cf0 \cb1 \{hashHistory\}\cb4 >\cb1 \uc0\u8232 				\cb4 <
+\f1\b \cf2 Route \cf9 \cb4 path\cf3 ="/" \cf9 component\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f3\i Wrapper
+\f2\i0 \}\cb4 >\cb1 \uc0\u8232 					\cb4 <
+\f1\b \cf2 IndexRoute \cf9 \cb4 components\cf3 =
+\f2\b0 \cf0 \cb1 \{\{\cf7 header\cf0 :
+\f3\i Home
+\f2\i0 ,\cf7 body\cf0 :
+\f3\i Homebody
+\f2\i0 \}\}\cb4 />\cb1 \uc0\u8232                     \cb4 <
+\f1\b \cf2 Route \cf9 \cb4 path\cf3 ='/about' \cf9 components\cf3 =
+\f2\b0 \cf0 \cb1 \{\{\cf7 header\cf0 :
+\f3\i About
+\f2\i0 ,\cf7 body\cf0 :
+\f3\i Aboutbody
+\f2\i0 \}\}\cb4 ></
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 				\cb4 </
+\f1\b \cf2 Route
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 \u8232 \u8232 			\cb4 </
+\f1\b \cf2 Router
+\f2\b0 \cf0 >\cb1 \uc0\u8232 		)\u8232 	\}\u8232 \}\u8232 \u8232 \u8232 \u8232 \u8232 
+\f1\b \cf2 export default 
+\f2\b0 \cf0 App\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\i \cf0 \
+\
+\
+export default App\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i0\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'
+\f2\b0 \cf0 ;\uc0\u8232 
+\f3\i \cf8 //import ReactDOM from 'react-dom'\uc0\u8232 \u8232 \u8232 
+\f1\i0\b \cf2 const 
+\f3\i\b0 \cf0 App 
+\f2\i0 =(props) => \{\uc0\u8232 	
+\f1\b \cf2 if
+\f2\b0 \cf0 (props.txt)\{\uc0\u8232 		
+\f1\b \cf2 return 
+\f2\b0 \cf0 \cb4 <
+\f1\b \cf2 Login 
+\f2\b0 \cf0 />\cb1 \uc0\u8232 	\}\u8232 	
+\f1\b \cf2 return 
+\f2\b0 \cf0 \cb4 <
+\f1\b \cf2 Logout 
+\f2\b0 \cf0 />\cb1 \uc0\u8232 \}\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Login
+\f2\i0 = () =>\cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 login\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 Logout
+\f2\i0 = () =>\cb4 <
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 logout\cb4 </
+\f1\b \cf2 h1
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 export default 
+\f3\i\b0 \cf0 App
+\f2\i0 ;\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\i \cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i0\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'
+\f2\b0 \cf0 ;\uc0\u8232 
+\f1\b \cf2 import 
+\f2\b0 \cf0 ReactDOM 
+\f1\b \cf2 from \cf3 'react-dom'
+\f2\b0 \cf0 ;\uc0\u8232 
+\f1\b \cf2 import 
+\f3\i\b0 \cf0 App 
+\f1\i0\b \cf2 from \cf3 './App'
+\f2\b0 \cf0 ;\uc0\u8232 \u8232 ReactDOM.
+\f1\b \cf5 render
+\f2\b0 \cf0 (\cb4 <
+\f1\b \cf2 App \cf9 \cb4 txt\cf3 =
+\f2\b0 \cf0 \cb1 \{
+\f1\b \cf2 true
+\f2\b0 \cf0 \}\cb4 />\cb1 , 
+\f1\b \cf5 document
+\f2\b0 \cf0 .\cf7 getElementById\cf0 (
+\f1\b \cf3 'root'
+\f2\b0 \cf0 ));\uc0\u8232 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\i \cf0 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\i0\b \cf2 import 
+\f2\b0 \cf0 React 
+\f1\b \cf2 from \cf3 'react'
+\f2\b0 \cf0 ;\uc0\u8232 
+\f3\i \cf8 //import ReactDOM from 'react-dom'\uc0\u8232 \u8232 
+\f1\i0\b \cf2 let 
+\f2\b0 \cf10 number\cf0 = [\cf9 1\cf0 ,\cf9 2\cf0 ,\cf9 3\cf0 ,\cf9 4\cf0 ]\uc0\u8232 \u8232 \u8232 
+\f1\b \cf2 const 
+\f2\b0 \cf10 listItems \cf0 = \cf10 number\cf0 .\cf7 map\cf0 ((number) =>\uc0\u8232 	\cb4 <
+\f1\b \cf2 li
+\f2\b0 \cf0 >\cb1 \{number\}\cb4 </
+\f1\b \cf2 li
+\f2\b0 \cf0 >\cb1 \uc0\u8232 );\u8232 \u8232 
+\f1\b \cf2 const 
+\f3\i\b0 \cf0 App 
+\f2\i0 =()=>\uc0\u8232 \cb4 <
+\f1\b \cf2 ul
+\f2\b0 \cf0 >\cb1 \{\cf10 listItems\cf0 \}\cb4 </
+\f1\b \cf2 ul
+\f2\b0 \cf0 >\cb1 \uc0\u8232 \u8232 
+\f1\b \cf2 export default 
+\f3\i\b0 \cf0 App
+\f2\i0 ;\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f3\i \cf0 \
+\
+\
+\
+\
+\
+}

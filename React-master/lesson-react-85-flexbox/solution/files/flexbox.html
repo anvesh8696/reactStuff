@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <style>
+        html, body {
+            height:100%;
+            padding: 0px;
+            margin: 0px;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        header {
+            background-color: #00B7FF;
+            padding: 20px;
+        }
+        header nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        div.leftNav {
+            display: flex;
+            flex-direction: row;
+        }
+        div.rightNav {
+            display: flex;
+            flex-direction: row;
+        }
+        header nav a {
+            padding: 5px;
+        }
+        footer {
+            background-color: #00B7FF;
+            padding: 20px;
+        }
+        main {
+            background-color: pink;
+            padding-left: 20px;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+        }
+        main nav {
+            height: 100%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid black;
+        }
+        div.mainBody {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>This is the header</h1>
+    <nav>
+        <div class="leftNav">
+            <a href="#">First</a>
+            <a href="#">Second</a>
+            <a href="#">Third</a>
+            <a href="#">Fourth</a>
+        </div>
+        <div class="rightNav">
+            <a href="#">Login</a>
+            <a href="#">Help</a>
+        </div>
+
+    </nav>
+
+</header>
+<main>
+
+    <nav>
+        <a href="#">First</a>
+        <a href="#">Second</a>
+        <a href="#">Third</a>
+        <a href="#">Fourth</a>
+    </nav>
+    <div class="mainBody">
+        hello, world.
+    </div>
+</main>
+
+<footer>
+    This is the footer
+</footer>
+</body>
+</html>

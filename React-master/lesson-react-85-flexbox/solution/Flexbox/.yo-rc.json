@@ -1,0 +1,14 @@
+{
+  "generator-kraken": {
+    "taskModule": "grunt",
+    "lintModule": "eslint",
+    "description": "This is a flexbox environment",
+    "author": "clay boyd",
+    "templateModule": "makara",
+    "i18n": "i18n",
+    "componentPackager": "bower",
+    "cssModule": "less",
+    "jsModule": "requirejs",
+    "useJson": null
+  }
+}

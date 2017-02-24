@@ -1,0 +1,99 @@
+why webpack
+
+It lets you write modular code and bundle it together into small packages to optimize load time.
+
+js,css,html -> one file(build file)//bundle.js
+
+cmd - npm run build  
+
+webpack advantage--
+
+imp--
+
+1.webpack can do many optimizations to reduce the output size. It also cares about request caching by using hashes.
+
+2.webpack allows you to split your codebase into chunks. Chunks are loaded on demand. This reduces initial loading time.
+
+babel - to run our jsx files(which makes inturns to convert like html syntax)/ follow the es6 methos in the project
+
+
+jsx 
+
+JSX is a preprocessor step that adds XML syntax to JavaScript.
+
+1.Just like XML, JSX tags have a tag name, attributes, and children. 
+2.If an attribute value is enclosed in quotes, the value is a string. Otherwise, wrap the value in braces and the value is the enclosed JavaScript expression.
+
+<div className="red">Children Text</div>;
+<MyCounter count={3 + 5} />;
+
+3.JSX is faster because it performs optimization while compiling code to JavaScript.
+4.It is also type-safe and most of the errors can be caught during compilation.
+5.JSX makes it easier and faster to write templates if you are familiar with HTML.
+
+
+grunt,gulp
+
+
+
+
+
+
+react installation
+
+Install Node on your system
+
+npm > 3.8.8
+node > 4.5.10
+
+command:  npm install create-react-app -g //generator //facebook //
+
+1.react-scripts includes babel,webpack,npm dependencies like the parent react,reactDomn
+
+
+path where node_modules reside in mac term - /usr/local/lib/node_modules
+
+in windows -  C:\Program Files\nodejs\node_modules
+
+go to command and redirect to desktop path
+
+desktop> create-react-app mythriApp
+
+cd mythriApp
+
+check node_modules folder is created after the command
+
+npm install (on project path)
+
+core - react,reactDom
+
+dev dep - 
+
+
+react w/o generator installation
+
+-- mkdir sampleProject
+- cd sampleProject
+
+-- create a package.json for project
+
+cmd:npm init
+name,author,version,keyword
+
+create pakg.json file
+
+- npm install react --save-dev
+- npm install react-dom --save-dev
+
+babel
+
+cmd:npm install babel-core
+cmd:npm install babel-loader
+cmd:npm install babel-preset-react
+
+webpack 
+
+cmd:npm install webpack --save-dev
+
+
+

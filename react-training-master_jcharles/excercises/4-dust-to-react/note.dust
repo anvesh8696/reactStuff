@@ -1,0 +1,13 @@
+{>"textArea" className="lap note"
+	name="note"
+	id="note"
+	label="{@pre type="content" key="note.addANoteOptional" editable="false" /}"
+	maxlength="1000"
+	autocomplete="off"
+	aria="aria-describedby=counterContainer"/}
+<span id="counterContainer">
+	<span class="accessAid">{@pre type="content" key="note.characterRemain" editable="false" /} </span>
+	<span class="counter"></span>
+</span>
+
+

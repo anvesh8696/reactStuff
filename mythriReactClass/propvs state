@@ -1,0 +1,604 @@
+w/o generator
+
+-- mkdir sampleProject
+- cd sampleProject
+
+-- create a package.json for project
+
+cmd:npm init
+name,author,version,keyword
+
+create pakg.json file
+
+- npm install react --save-dev
+- npm install react-dom --save-dev
+
+babel
+
+cmd:npm install babel-core
+cmd:npm install babel-loader
+cmd:npm install babel-preset-react
+npm install babel-preset-es2015
+
+webpack 
+
+cmd:npm install webpack --save-dev
+npm install webpack-dev-server --save-dev
+
+pakg.json:
+
+"start": "webpack-dev-server --hot"
+
+import React from 'react';
+
+//stateless component
+//const App = () => <h2>Welcome to the world of react</h2>
+
+//statefull component
+class App extends React.Component {
+	render(){
+		let txt = this.props.txt
+		return (
+		<div>
+			<h1>{txt}</h1>
+
+		</div> )
+	}
+}
+
+// without jsx
+// class App extends React.Component {
+// 	render(){
+// 		//let txt = this.props.txt
+// 		return React.createElement('h1',null,'hi react create element')
+// 	}
+// }
+
+
+// App.defaultProps ={
+// 	txt:"this is my deafult prop",
+// 	cat:"109"
+// }
+
+// App.propTypes = {
+// 	txt:React.PropTypes.string,
+// 	cat:React.PropTypes.number.isRequired
+// }
+
+
+
+
+
+
+export default App
+
+
+import React from 'react';
+
+//state is a collection of values that are managed & updated by the component
+//statefull component
+class App extends React.Component {
+	constructor(){
+		super();
+		this.state = {
+			val:0
+		}
+	}
+	update(e){
+		this.setState({val:e.target.value})
+	}
+	// adjacent jsx must be wrapped with enclosing tags
+	render(){
+		let txt = this.props.txt
+		return (
+		<div>
+			<input type="text" onChange={this.update.bind(this)}/>
+			<h1>{this.state.val}-{txt}</h1>
+			<h1>{txt}</h1>
+
+		</div> )
+	}
+}
+
+export default App
+
+
+import React from 'react';
+
+//react owner-ownee relationship
+//react comp can render the output of other comp means the child comp will update the state of parent comp
+//statefull component
+class App extends React.Component {
+	constructor(){
+		super();
+		this.state = {
+			val:0
+		}
+	}
+	update(e){
+		this.setState({val:e.target.value})
+	}
+	// adjacent jsx must be wrapped with enclosing tags
+	render(){
+		let txt = this.props.txt
+		return (
+		<div>
+			<Widget update={this.update.bind(this)}/>
+			<h1>{this.state.val}-{txt}</h1>
+			<h1>{txt}</h1>
+
+		</div> )
+	}
+}
+
+const Widget = (sample) => <input type="text" onChange={sample.update}/>
+
+export default App
+
+import React from 'react';
+
+//react owner-ownee relationship
+//react comp can render the output of other comp means the child comp will update the state of parent comp
+//statefull component
+class App extends React.Component {
+
+	// adjacent jsx must be wrapped with enclosing tags
+	render(){
+		return (
+		<div>
+			<Widget/>
+			<Header />
+			<Footer />
+			<Dropbox />
+			<DropboxComponet />
+			<h2>hello</h2>
+
+		</div> )
+	}
+}
+
+const Widget = () => <img>World</img>
+
+const Header = () => <p>header</p>
+
+const Footer = () => <p>footer</p>
+
+//with es6
+class Dropbox extends React.Component{
+	render(){
+		return <h1>dropbox</h1>
+	}
+}
+//with es5
+var DropboxComponet = React.createClass({
+	render:function(){
+		return (
+			<div>
+		<h1>with es5</h1>
+				</div>)
+	}
+})
+
+export default App
+
+
+
+
+// 1 wrapper/container - include multiple components
+
+//accessing the child props - in order to access the nested values/comp form comp to comp  we use props.children
+
+
+import React from 'react';
+
+class App extends React.Component {
+	render(){
+		return <Button>I<Heart />React</Button>
+	}
+}
+
+const Button = (props) => <button>{props.children}</button>
+
+const Heart = () => <span>&hearts;</span>
+
+export default App
+
+
+//react cutom proptype validation to react components
+
+import React from 'react';
+
+class App extends React.Component {
+	render(){
+		return <Sample iphone="six"/>
+	}
+}
+
+const Sample = (props)=><h1>{props.iphone}</h1>
+
+
+Sample.propTypes = {
+	iphone(props, propName, component){
+		if(!(propName in props)){
+			return new Error(`Missing ${propName}`)
+		}
+		if((props[propName].length)<6){
+			return new Error(`${propName} is too short`)
+		}
+	}
+}
+
+// Sample.propTypes = {
+// 	iphone:React.PropTypes.string
+// }
+
+
+// App.propTypes = {
+// 	propArray: React.PropTypes.array.isRequired,
+// 	propBool: React.PropTypes.bool.isRequired,
+// 	propFunc: React.PropTypes.func,
+// 	propNumber: React.PropTypes.number,
+// 	propString: React.PropTypes.string,
+// 	propObject: React.PropTypes.object
+// }
+
+
+export default App
+
+
+//react synthetic event system
+
+normalize the evnets with react synthetic event system
+
+
+
+import React from 'react';
+
+class App extends React.Component {
+	constructor(){
+	super();
+		this.state = {
+			txt:"sample--------"
+		}
+	}
+	update(e){
+		this.setState({txt:e.target.value})
+	}
+
+	render(){
+		return (
+			<div>
+				<textarea rows="12" cols="12"
+						  onChange={this.update.bind(this)}
+						  onClick={this.update.bind(this)}
+						  onCopy={this.update.bind(this)}
+						  onPaste={this.update.bind(this)}
+						  onCut={this.update.bind(this)}
+						  onFocus={this.update.bind(this)}
+						  onBlur={this.update.bind(this)}
+						  onMouseDown={this.update.bind(this)}
+						  onTouchMove={this.update.bind(this)}
+						  onTouchStart={this.update.bind(this)}
+
+				></textarea>
+				<h1>{this.state.txt}</h1>
+			</div>
+		)
+	}
+
+
+
+}
+
+
+
+export default App
+
+
+
+//refs 
+
+refs are meant to access the node or instances of the component
+
+import React from 'react';
+
+class App extends React.Component {
+	constructor(){
+		super()
+		this.state = {
+			txt:"sample-------"
+		}
+	}
+	update(){
+		this.setState({
+			txt:this.refs.sample.value,
+			txt1:this.refs.sample1.value
+		})
+	}
+	render(){
+		return (
+			<div>
+				<input ref="sample" type="text" onChange={this.update.bind(this)} />
+				<h1>{this.state.txt}</h1>
+				<input ref="sample1" type="text" onChange={this.update.bind(this)} />
+				<h1>{this.state.txt1}</h1>
+			</div>
+		)
+	}
+}
+
+
+
+export default App
+
+
+//component life cycle methods
+
+import React from 'react';
+import ReactDOM from 'react-dom'
+
+class App extends React.Component {
+	constructor(){
+		super()
+		this.state ={
+			val:0
+		}
+	}
+	update(){
+		this.setState({val:this.state.val+1})
+	}
+	componentWillMount(){
+		console.log("componentWillmount will trigger before render method or before comp is mounted on dom")
+	}
+	componentDidMount(){
+		console.log('componentDidMount will trigger when the comp is mounted on the dom')
+	}
+	componentWillUnmount(){
+		console.log("componentWillUnmount will trigger when the comp is removed from the dom")
+	}
+	render(){
+		console.log("render")
+		return (
+			<div>
+				<button onClick={this.update.bind(this)}>{this.state.val}</button>
+			</div>
+		)
+	}
+}
+
+
+class Wrapper extends React.Component {
+	mount(){
+		ReactDOM.render(<App/>,document.getElementById('qwerty'))
+	}
+	unmount(){
+		ReactDOM.unmountComponentAtNode(document.getElementById('qwerty'))
+	}
+	render(){
+		return (
+			<div>
+				<button onClick={this.mount.bind(this)}>mount</button>
+				<button onClick={this.unmount.bind(this)}>unmount</button>
+				<div id="qwerty"></div>
+			</div>
+		)
+
+	}
+}
+
+
+
+export default Wrapper
+
+
+
+1//compwillmount
+2//render
+3//compdidmount
+!(yesorno)4//comp will unmount
+
+
+//component life cycle methods
+
+- findDOMNode
+  // its will find the available element on the node which is injected on the dom
+
+playing with compwillmount vs compoUnmount
+
+import React from 'react';
+import ReactDOM from 'react-dom'
+
+class App extends React.Component {
+	constructor(){
+		super()
+		this.state ={
+			val:0
+		}
+	}
+	update(){
+		this.setState({val:this.state.val+1})
+	}
+	componentWillMount(){
+		console.log("componentWillmount will trigger before render method or before comp is mounted on dom")
+		this.setState({m:10})
+	}
+	componentDidMount(){
+		console.log('componentDidMount will trigger when the comp is mounted on the dom')
+		console.log('get html element'+ReactDOM.findDOMNode(this))
+		this.inc = setInterval(this.update.bind(this),500)
+	}
+	componentWillUnmount(){
+		console.log("componentWillUnmount will trigger when the comp is removed from the dom")
+		clearInterval(this.inc)
+	}
+	render(){
+		console.log("render")
+		return (
+
+				<button onClick={this.update.bind(this)}>{this.state.val*this.state.m}</button>
+		)
+	}
+}
+
+
+class Wrapper extends React.Component {
+	mount(){
+		ReactDOM.render(<App/>,document.getElementById('qwerty'))
+	}
+	unmount(){
+		ReactDOM.unmountComponentAtNode(document.getElementById('qwerty'))
+	}
+	render(){
+		return (
+			<div>
+				<button onClick={this.mount.bind(this)}>mount</button>
+				<button onClick={this.unmount.bind(this)}>unmount</button>
+				<div id="qwerty"></div>
+			</div>
+		)
+
+	}
+}
+
+
+
+export default Wrapper
+
+
+// no prioruty
+- componentWillReceiveProps
+
+ // expecting some props from other comps to be injected in your comp
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+
+class App extends React.Component{
+	constructor(){
+		super();
+		this.state = {
+			increasing:false
+		}
+	}
+	update(){
+		ReactDOM.render(<App val={this.props.val+1}/>,document.getElementById('root'))
+	}
+	componentWillReceiveProps(nextProps){
+		this.setState({increasing:nextProps.val>this.props.val})
+	}
+	shouldComponentUpdate(nextProps, nextState)
+	{
+		return nextProps.val%5 === 0
+	}
+	render(){
+		console.log(this.state.increasing)
+		return <button onClick={this.update.bind(this)}>{this.props.val}</button>
+	}
+	componentDidUpdate(prevProps, prevState){
+		console.log(`previousProps:${prevProps.val}`)
+
+	}
+
+}
+
+App.defaultProps = {
+	val:0
+}
+
+export default App
+
+//shivanis todo example
+
+import React, { Component } from 'react';
+import './App.css';
+
+class App extends Component {
+	render() {
+		return (
+			<div className="App">
+				<Content/>
+
+			</div>);
+	}
+}
+
+class Content extends Component{
+	constructor(){
+		super();
+		this.state ={
+			data:
+				[
+					{"name":"John", "age":"20" },
+					{"name":"SAm", "age":"30" },
+					{"name":"Pam", "age":"23" },
+					{"name":"Pam", "age":"28" },
+					{"name":"Julie", "age":"24" }
+
+				]
+		}
+	}
+	changeContent(e) {
+		console.log('Name changed to '+ this.refs.name.value);
+		console.log('Age chnaged to '+ this.refs.age.value);
+	}
+
+
+
+	sendContent() {
+		var person ={}
+		person.name = this.refs.name.value,
+			person.age = this.refs.age.value,
+			console.log(person)
+		var newPerson = this.state.data.slice()
+		console.log(newPerson)
+		newPerson.push(person)
+		this.setState({ data: newPerson })
+	}
+
+
+	render () {
+		return (
+			<div className="App-content">
+				<div className="container">
+					<div className="jumbotron">
+						<table className="table table-responsive table-bordered">
+							<tbody>
+							{this.state.data.map(
+								(person, i) => <TableRow  key= {i} data = {person} />
+							)
+							}
+							</tbody>
+						</table>
+						<div>
+							name:<input type="text" ref="name"  onChange={this.changeContent.bind(this)}/>
+							age:<input type="text" ref="age"  onChange={this.changeContent.bind(this)} />
+							<button onClick={this.sendContent.bind(this)}>submit</button>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		);
+	}
+}
+
+
+class TableRow  extends Component{ /*this component is used in content component to disply the dynamic data using props(data). here we are accessing the name & age values of an data obj(which is declared in content component) using props*/
+
+	render(){
+
+		return (
+			<tr>
+				<td>{this.props.data.name}</td>
+				<td>{this.props.data.age}</td>
+			</tr>
+
+		);
+	}
+}
+
+
+
+
+export default App;

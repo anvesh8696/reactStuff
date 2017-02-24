@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+    <link rel='stylesheet' href='/css/styles.css' />
+</head>
+<body>
+<div id="layout">
+    <h1 id="page-title">Express Todo</h1>
+    <div id="list">
+
+        <form action="/create" method="post" >
+            <div class="item-new">
+                <input type="text" name="content" class="input" />
+            </div>
+        </form>
+
+        <div class="item">
+            <a href="/edit/f47b6329-e3db-4af2-e2a1-6fd818ab08ac"
+               title="Update this todo item"
+               class="update-link">First</a>
+            <a href="/delete/f47b6329-e3db-4af2-e2a1-6fd818ab08ac"
+               title="Delete this todo item"
+               class="del-btn">Delete</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

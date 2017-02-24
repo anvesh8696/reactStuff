@@ -1,0 +1,36 @@
+<!doctype html public "library">
+<html>
+	<head>
+		<meta charset=utf-8/>
+		<title>Frontend Masters</title>
+		<link rel="stylesheet" href="../shared.css"/>
+	</head>
+	<body>
+
+		<div id="dust-version" style="margin-bottom: 20px">
+			<!-- DUST rendered stuff -->
+			<div class="textArea lap note">
+				<label for="note" class="">Add a note (optional)</label>
+				<textarea id="note" name="note" class="hasHelp validate " placeholder="" maxlength="1000" aria-required="false" aria-describedby="counterContainer" rows="1"></textarea>
+			</div>
+
+
+			<span id="counterContainer">
+				<span class="accessAid">characters remaining </span>
+				<span class="counter" style="display: none;">1000</span>
+			</span>
+			<!-- END DUST rendered stuff -->
+
+		</div>
+
+
+
+		<div id="react-version">
+			<!-- Render the react version in here -->
+		</div>
+
+	</body>
+
+	<script src="/__build__/shared.js"></script>
+	<script src="/__build__/4-dust-to-react.js"></script>
+</html>

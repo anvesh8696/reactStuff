@@ -1,0 +1,107 @@
+react children untility methods
+
+import React from 'react';
+
+class App extends React.Component{
+	render(){
+		return (
+			<Parent>
+				<div className="sample1"></div>
+				<div className="sample1"></div>
+			</Parent>
+		)
+	}
+}
+
+class Parent extends React.Component {
+	render(){
+		//console.log('Actual child',this.props.children)
+		//let items = this.props.children.map(child=>child)
+		//let items = React.Children.map(this.props.children,child=>child)
+		//let items = React.Children.toArray(this.props.children)
+		//let items = React.Children.forEach(this.props.children,child=>console.log(child.props.className))
+		let items = React.Children.only(this.props.children)
+		console.log('mapped child',items)
+		return null
+	}
+}
+
+export default App;
+
+
+react.clone element  -clones the given react child element 
+
+
+import React from 'react';
+
+class App extends React.Component {
+	render(){
+		return (
+			<Buttons>
+				<button value="A">A</button>
+				<button value="B">B</button>
+				<button value="C">C</button>
+			</Buttons>
+		)
+	}
+}
+
+
+class Buttons extends React.Component {
+	constructor(){
+		super();
+		this.state = {selected: 'None'}
+	}
+	update(selected){
+		this.setState({selected})
+	}
+	render(){
+		let fn = child =>
+			React.cloneElement(child, {
+				onClick:this.update.bind(this, child.props.value)
+			})
+		let items = React.Children.map(this.props.children, fn);
+		return (
+			<div>
+				<h2>You have selected: {this.state.selected}</h2>
+				{items}
+			</div>
+		)
+	}
+}
+
+
+
+export default App;
+
+
+
+react - router 
+
+-- npm install react-router --save-dev
+
+
+import React from 'react';
+import {Router, Route, Link, browserHistory} from 'react-router'
+
+const Home = () => <div><h1>Home</h1><Links/></div>
+const AboutUs = () => <div><h1>AboutUs</h1><Links/></div>
+const Contactus = () => <div><h1>Contactus</h1><Links/></div>
+
+const Links = () =>
+	<nav>
+		<Link to="/">Home</Link>
+		<Link to="/AboutUs">AboutUs</Link>
+		<Link to="/Contactus">Contactus</Link>
+	</nav>
+
+const App = () => {
+	return (
+		<Router history={ browserHistory }>
+			<Route path="/" component={Home}></Route>
+			<Route path="/AboutUs" component={AboutUs}></Route>
+			<Route path="/Contactus" component={Contactus}></Route>
+		</Router>
+	)
+}
+export default App

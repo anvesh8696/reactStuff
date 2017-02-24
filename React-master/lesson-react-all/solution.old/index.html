@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>Kraken Todos</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<div id="wrapper"><p>Select language:</p>
+
+    <p><a href="/setLanguage/en-us" alt="English">English</a><br/>
+        <a href="/setLanguage/es-es" alt="Spanish">Spanish</a>
+    </p>
+
+    <h1 id="page-title">Unleash the Kraken!</h1>
+
+    <div id="list">
+        <form method="POST" action="/todos">
+            <div class="item-new">
+                <input type="text" name="content" class="input">
+                <input type="hidden" name="_csrf" value="7vkUq1eLd5NfuVdYV2EuKXHgtvt8n2P/0Jxs0=">
+            </div>
+        </form>
+        <div class="item">
+            <a href="#" class="update-link" >walk the doggy</a>
+            <a href="#" class="del-btn" >Delete</a>
+        </div>
+        <div class="item">
+            <a href="#" class="update-link" >walk the spouse</a>
+            <a href="#" class="del-btn" >Delete</a></div>
+        <div class="item">
+            <a href="#" class="update-link" >howdy</a>
+            <a href="#" class="del-btn" >Delete</a>
+        </div>
+        <div class="item">
+            <a href="#" class="update-link" >howdy,how are you</a>
+            <a href="#" class="del-btn" >Delete</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
